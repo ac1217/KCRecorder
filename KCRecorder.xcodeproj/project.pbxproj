@@ -1,0 +1,532 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		882B4FB21F56533B0097F20D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 882B4FB11F56533B0097F20D /* main.m */; };
+		882B4FB51F56533B0097F20D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 882B4FB41F56533B0097F20D /* AppDelegate.m */; };
+		882B4FB81F56533B0097F20D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 882B4FB71F56533B0097F20D /* ViewController.m */; };
+		882B4FBB1F56533B0097F20D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 882B4FB91F56533B0097F20D /* Main.storyboard */; };
+		882B4FBD1F56533B0097F20D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 882B4FBC1F56533B0097F20D /* Assets.xcassets */; };
+		882B4FC01F56533B0097F20D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 882B4FBE1F56533B0097F20D /* LaunchScreen.storyboard */; };
+		882B4FCB1F56533C0097F20D /* KCRecorderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 882B4FCA1F56533C0097F20D /* KCRecorderTests.m */; };
+		882B4FD61F56533C0097F20D /* KCRecorderUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 882B4FD51F56533C0097F20D /* KCRecorderUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		882B4FC71F56533C0097F20D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 882B4FA51F56533B0097F20D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 882B4FAC1F56533B0097F20D;
+			remoteInfo = KCRecorder;
+		};
+		882B4FD21F56533C0097F20D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 882B4FA51F56533B0097F20D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 882B4FAC1F56533B0097F20D;
+			remoteInfo = KCRecorder;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		882B4FAD1F56533B0097F20D /* KCRecorder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KCRecorder.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		882B4FB11F56533B0097F20D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		882B4FB31F56533B0097F20D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		882B4FB41F56533B0097F20D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		882B4FB61F56533B0097F20D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		882B4FB71F56533B0097F20D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		882B4FBA1F56533B0097F20D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		882B4FBC1F56533B0097F20D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		882B4FBF1F56533B0097F20D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		882B4FC11F56533B0097F20D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		882B4FC61F56533B0097F20D /* KCRecorderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KCRecorderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		882B4FCA1F56533C0097F20D /* KCRecorderTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KCRecorderTests.m; sourceTree = "<group>"; };
+		882B4FCC1F56533C0097F20D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		882B4FD11F56533C0097F20D /* KCRecorderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KCRecorderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		882B4FD51F56533C0097F20D /* KCRecorderUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KCRecorderUITests.m; sourceTree = "<group>"; };
+		882B4FD71F56533C0097F20D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		882B4FAA1F56533B0097F20D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		882B4FC31F56533B0097F20D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		882B4FCE1F56533C0097F20D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		882B4FA41F56533B0097F20D = {
+			isa = PBXGroup;
+			children = (
+				882B4FAF1F56533B0097F20D /* KCRecorder */,
+				882B4FC91F56533C0097F20D /* KCRecorderTests */,
+				882B4FD41F56533C0097F20D /* KCRecorderUITests */,
+				882B4FAE1F56533B0097F20D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		882B4FAE1F56533B0097F20D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				882B4FAD1F56533B0097F20D /* KCRecorder.app */,
+				882B4FC61F56533B0097F20D /* KCRecorderTests.xctest */,
+				882B4FD11F56533C0097F20D /* KCRecorderUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		882B4FAF1F56533B0097F20D /* KCRecorder */ = {
+			isa = PBXGroup;
+			children = (
+				882B4FB31F56533B0097F20D /* AppDelegate.h */,
+				882B4FB41F56533B0097F20D /* AppDelegate.m */,
+				882B4FB61F56533B0097F20D /* ViewController.h */,
+				882B4FB71F56533B0097F20D /* ViewController.m */,
+				882B4FB91F56533B0097F20D /* Main.storyboard */,
+				882B4FBC1F56533B0097F20D /* Assets.xcassets */,
+				882B4FBE1F56533B0097F20D /* LaunchScreen.storyboard */,
+				882B4FC11F56533B0097F20D /* Info.plist */,
+				882B4FB01F56533B0097F20D /* Supporting Files */,
+			);
+			path = KCRecorder;
+			sourceTree = "<group>";
+		};
+		882B4FB01F56533B0097F20D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				882B4FB11F56533B0097F20D /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		882B4FC91F56533C0097F20D /* KCRecorderTests */ = {
+			isa = PBXGroup;
+			children = (
+				882B4FCA1F56533C0097F20D /* KCRecorderTests.m */,
+				882B4FCC1F56533C0097F20D /* Info.plist */,
+			);
+			path = KCRecorderTests;
+			sourceTree = "<group>";
+		};
+		882B4FD41F56533C0097F20D /* KCRecorderUITests */ = {
+			isa = PBXGroup;
+			children = (
+				882B4FD51F56533C0097F20D /* KCRecorderUITests.m */,
+				882B4FD71F56533C0097F20D /* Info.plist */,
+			);
+			path = KCRecorderUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		882B4FAC1F56533B0097F20D /* KCRecorder */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 882B4FDA1F56533C0097F20D /* Build configuration list for PBXNativeTarget "KCRecorder" */;
+			buildPhases = (
+				882B4FA91F56533B0097F20D /* Sources */,
+				882B4FAA1F56533B0097F20D /* Frameworks */,
+				882B4FAB1F56533B0097F20D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KCRecorder;
+			productName = KCRecorder;
+			productReference = 882B4FAD1F56533B0097F20D /* KCRecorder.app */;
+			productType = "com.apple.product-type.application";
+		};
+		882B4FC51F56533B0097F20D /* KCRecorderTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 882B4FDD1F56533C0097F20D /* Build configuration list for PBXNativeTarget "KCRecorderTests" */;
+			buildPhases = (
+				882B4FC21F56533B0097F20D /* Sources */,
+				882B4FC31F56533B0097F20D /* Frameworks */,
+				882B4FC41F56533B0097F20D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				882B4FC81F56533C0097F20D /* PBXTargetDependency */,
+			);
+			name = KCRecorderTests;
+			productName = KCRecorderTests;
+			productReference = 882B4FC61F56533B0097F20D /* KCRecorderTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		882B4FD01F56533C0097F20D /* KCRecorderUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 882B4FE01F56533C0097F20D /* Build configuration list for PBXNativeTarget "KCRecorderUITests" */;
+			buildPhases = (
+				882B4FCD1F56533C0097F20D /* Sources */,
+				882B4FCE1F56533C0097F20D /* Frameworks */,
+				882B4FCF1F56533C0097F20D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				882B4FD31F56533C0097F20D /* PBXTargetDependency */,
+			);
+			name = KCRecorderUITests;
+			productName = KCRecorderUITests;
+			productReference = 882B4FD11F56533C0097F20D /* KCRecorderUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		882B4FA51F56533B0097F20D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = iMac;
+				TargetAttributes = {
+					882B4FAC1F56533B0097F20D = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+					};
+					882B4FC51F56533B0097F20D = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 882B4FAC1F56533B0097F20D;
+					};
+					882B4FD01F56533C0097F20D = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 882B4FAC1F56533B0097F20D;
+					};
+				};
+			};
+			buildConfigurationList = 882B4FA81F56533B0097F20D /* Build configuration list for PBXProject "KCRecorder" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 882B4FA41F56533B0097F20D;
+			productRefGroup = 882B4FAE1F56533B0097F20D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				882B4FAC1F56533B0097F20D /* KCRecorder */,
+				882B4FC51F56533B0097F20D /* KCRecorderTests */,
+				882B4FD01F56533C0097F20D /* KCRecorderUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		882B4FAB1F56533B0097F20D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				882B4FC01F56533B0097F20D /* LaunchScreen.storyboard in Resources */,
+				882B4FBD1F56533B0097F20D /* Assets.xcassets in Resources */,
+				882B4FBB1F56533B0097F20D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		882B4FC41F56533B0097F20D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		882B4FCF1F56533C0097F20D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		882B4FA91F56533B0097F20D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				882B4FB81F56533B0097F20D /* ViewController.m in Sources */,
+				882B4FB51F56533B0097F20D /* AppDelegate.m in Sources */,
+				882B4FB21F56533B0097F20D /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		882B4FC21F56533B0097F20D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				882B4FCB1F56533C0097F20D /* KCRecorderTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		882B4FCD1F56533C0097F20D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				882B4FD61F56533C0097F20D /* KCRecorderUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		882B4FC81F56533C0097F20D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 882B4FAC1F56533B0097F20D /* KCRecorder */;
+			targetProxy = 882B4FC71F56533C0097F20D /* PBXContainerItemProxy */;
+		};
+		882B4FD31F56533C0097F20D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 882B4FAC1F56533B0097F20D /* KCRecorder */;
+			targetProxy = 882B4FD21F56533C0097F20D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		882B4FB91F56533B0097F20D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				882B4FBA1F56533B0097F20D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		882B4FBE1F56533B0097F20D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				882B4FBF1F56533B0097F20D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		882B4FD81F56533C0097F20D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		882B4FD91F56533C0097F20D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		882B4FDB1F56533C0097F20D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = KCRecorder/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = iMac.KCRecorder;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		882B4FDC1F56533C0097F20D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = KCRecorder/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = iMac.KCRecorder;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		882B4FDE1F56533C0097F20D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = KCRecorderTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = iMac.KCRecorderTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KCRecorder.app/KCRecorder";
+			};
+			name = Debug;
+		};
+		882B4FDF1F56533C0097F20D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = KCRecorderTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = iMac.KCRecorderTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KCRecorder.app/KCRecorder";
+			};
+			name = Release;
+		};
+		882B4FE11F56533C0097F20D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = KCRecorderUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = iMac.KCRecorderUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = KCRecorder;
+			};
+			name = Debug;
+		};
+		882B4FE21F56533C0097F20D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = KCRecorderUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = iMac.KCRecorderUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = KCRecorder;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		882B4FA81F56533B0097F20D /* Build configuration list for PBXProject "KCRecorder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				882B4FD81F56533C0097F20D /* Debug */,
+				882B4FD91F56533C0097F20D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		882B4FDA1F56533C0097F20D /* Build configuration list for PBXNativeTarget "KCRecorder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				882B4FDB1F56533C0097F20D /* Debug */,
+				882B4FDC1F56533C0097F20D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		882B4FDD1F56533C0097F20D /* Build configuration list for PBXNativeTarget "KCRecorderTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				882B4FDE1F56533C0097F20D /* Debug */,
+				882B4FDF1F56533C0097F20D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		882B4FE01F56533C0097F20D /* Build configuration list for PBXNativeTarget "KCRecorderUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				882B4FE11F56533C0097F20D /* Debug */,
+				882B4FE21F56533C0097F20D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 882B4FA51F56533B0097F20D /* Project object */;
+}
