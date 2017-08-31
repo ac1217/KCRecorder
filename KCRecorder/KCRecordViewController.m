@@ -95,7 +95,7 @@
 
 - (float)accompanyAudioRateWithRecorder:(KCRecorder *)recorder
 {
-    return 0.5;
+    return 1;
 }
 
 - (NSTimeInterval)accompanyAudioStartTimeWithRecorder:(KCRecorder *)recorder
