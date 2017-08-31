@@ -15,7 +15,6 @@ extern NSString *const kGPUImageColorSwizzlingFragmentShaderString;
 @interface GPUImageMovieWriter : NSObject <GPUImageInput>
 {
     BOOL alreadyFinishedRecording;
-    
     NSURL *movieURL;
     NSString *fileType;
 	AVAssetWriter *assetWriter;

@@ -8,7 +8,7 @@
 
 #import "KCRecorder.h"
 
-@interface KCRecorder (){
+@interface KCRecorder ()<GPUImageVideoCameraDelegate>{
     KCRecorderView *_view;
     GPUImageView *_gpuView;
     GPUImageOutput *_filter;
@@ -25,6 +25,8 @@
 
 @property (nonatomic,strong) NSTimer *timer;
 
+@property (nonatomic,strong) AVAudioPlayer *player;
+
 @end
 
 @implementation KCRecorder
@@ -33,11 +35,20 @@
 
 #pragma mark -DataSource
 
+- (float)accompanyAudioRate
+{
+    
+    if ([_dataSource respondsToSelector:@selector(accompanyAudioRateWithRecorder:)]) {
+        return [_dataSource accompanyAudioRateWithRecorder:self];
+    }
+    return 1;
+}
+
 - (NSURL *)accompanyAudioURL
 {
     
-    if ([_dataSource respondsToSelector:@selector(accompanyAudioWithRecorder:)]) {
-        return [_dataSource accompanyAudioWithRecorder:self];
+    if ([_dataSource respondsToSelector:@selector(accompanyAudioURLWithRecorder:)]) {
+        return [_dataSource accompanyAudioURLWithRecorder:self];
     }
     return nil;
 }
@@ -133,6 +144,35 @@
     [_camera pauseCameraCapture];
 }
 
+- (void)setFocusMode:(AVCaptureFocusMode)focusMode
+{
+    
+    
+    if([_camera.inputCamera lockForConfiguration:nil]) {
+        
+        // 聚焦模式
+        if ([_camera.inputCamera isFocusModeSupported:focusMode]) {
+            [_camera.inputCamera setFocusMode:focusMode];
+        }
+    
+    }
+    [_camera.inputCamera unlockForConfiguration];
+}
+
+- (void)setFocusPointOfInterest:(CGPoint)focusPointOfInterest
+{
+    
+    if([_camera.inputCamera lockForConfiguration:nil]) {
+        
+        if ([_camera.inputCamera isFocusPointOfInterestSupported]) {
+            [_camera.inputCamera setFocusPointOfInterest:focusPointOfInterest];
+        }
+        
+        
+    }
+    [_camera.inputCamera unlockForConfiguration];
+}
+
 - (void)setTorchMode:(AVCaptureTorchMode)torchMode
 {
     if([_camera.inputCamera lockForConfiguration:nil]) {
@@ -146,7 +186,6 @@
 
 - (void)switchTorch
 {
-    
     if([_camera.inputCamera lockForConfiguration:nil]) {
         
         switch (_camera.inputCamera.torchMode) {
@@ -184,15 +223,15 @@
 {
     _filter = filter;
     
+    if (!_filter) {
+        _filter = _emptyFilter;
+    }
+    
     if (!_isPrepare) {
         return;
     }
     
     [_camera removeAllTargets];
-    
-    if (!_filter) {
-        _filter = _emptyFilter;
-    }
     
     [_filter addTarget:_gpuView];
     [_camera addTarget:_filter];
@@ -205,12 +244,20 @@
 //    _camera.inputCamera.torchMode
     [_camera stopCameraCapture];
     [_camera removeAllTargets];
+    [_filter removeAllTargets];
     _camera = nil;
+    _filter = nil;
+    _writer = nil;
+    _gpuView = nil;
+    _player = nil;
+    _view.recorderLayer = nil;
+    _isPrepare = NO;
 }
 
 - (void)prepare
 {
    GPUImageVideoCamera *camera = [[GPUImageVideoCamera alloc] initWithSessionPreset:_sessionPreset cameraPosition:_cameraPosition];
+    camera.delegate = self;
     [camera.videoCaptureConnection setPreferredVideoStabilizationMode:AVCaptureVideoStabilizationModeCinematic];
     //输出图像旋转方式
     camera.outputImageOrientation = UIInterfaceOrientationPortrait;
@@ -231,6 +278,13 @@
     [camera addTarget:_filter];
     
     [camera startCameraCapture];
+    
+    if (self.accompanyAudioURL) {
+        _player = [[AVAudioPlayer alloc] initWithContentsOfURL:self.accompanyAudioURL error:nil];
+        _player.enableRate = YES;
+        [_player prepareToPlay];
+        
+    }
     
     _camera = camera;
     
@@ -262,7 +316,30 @@
         size = _view.bounds.size;
     }
     
-    GPUImageMovieWriter *writer = [[GPUImageMovieWriter alloc] initWithMovieURL:url size:size fileType:_fileType outputSettings:nil];
+    //写入视频大小
+    NSInteger numPixels = size.width * size.height;
+    //每像素比特
+    CGFloat bitsPerPixel = 6.0;
+    NSInteger bitsPerSecond = numPixels * bitsPerPixel;
+    // 码率和帧率设置
+    NSDictionary *compressionProperties = @{
+                                            AVVideoAverageBitRateKey : @(bitsPerSecond),
+                                             AVVideoExpectedSourceFrameRateKey : @(30),
+                                             AVVideoMaxKeyFrameIntervalKey : @(30),
+                                             AVVideoProfileLevelKey : AVVideoProfileLevelH264BaselineAutoLevel
+                                            };
+    
+    //视频属性
+    NSDictionary *outputSetting = @{
+                                    AVVideoCodecKey : AVVideoCodecH264,
+                                       AVVideoScalingModeKey : AVVideoScalingModeResizeAspectFill,
+                                       AVVideoWidthKey : @(size.width),
+                                       AVVideoHeightKey : @(size.height),
+                                       AVVideoCompressionPropertiesKey : compressionProperties
+                                    };
+    
+    GPUImageMovieWriter *writer = [[GPUImageMovieWriter alloc] initWithMovieURL:url size:size fileType:_fileType outputSettings:outputSetting];
+    
     __weak typeof(self) weakSelf = self;
     writer.completionBlock = ^{
         
@@ -284,19 +361,38 @@
     writer.hasAudioTrack = YES;
     
     switch (_track) {
-        case KCRecorderTrackBoth:
+        case KCRecorderTrackBoth:{
             
             _camera.audioEncodingTarget = writer;
             [_filter addTarget:writer];
+            
+            
+            // 音频设置
+//            NSDictionary *audioSetting =  @{
+//                                            AVEncoderBitRatePerChannelKey : @(28000),
+//                                               AVFormatIDKey : @(kAudioFormatMPEG4AAC),
+//                                               AVNumberOfChannelsKey : @(2),
+//                                               AVSampleRateKey : @(22050)
+//                                            };
+//            [writer setHasAudioTrack:YES audioSettings:audioSetting];
+        }
             break;
         case KCRecorderTrackVideo:
             
             _camera.audioEncodingTarget = nil;
             [_filter addTarget:writer];
+//            [writer setHasAudioTrack:YES audioSettings:nil];
             break;
         case KCRecorderTrackAudio:
-            
+        {
+            // 音频设置
+//            NSDictionary *audioSetting =  @{ AVEncoderBitRatePerChannelKey : @(28000),
+//                                             AVFormatIDKey : @(kAudioFormatMPEG4AAC),
+//                                             AVNumberOfChannelsKey : @(1),
+//                                             AVSampleRateKey : @(22050) };
+//            [writer setHasAudioTrack:YES audioSettings:audioSetting];
             _camera.audioEncodingTarget = writer;
+        }
             break;
             
         default:
@@ -306,10 +402,15 @@
     [writer startRecording];
     _writer = writer;
     
+    _player.rate = self.accompanyAudioRate;
+    _player.currentTime = _currentTime + self.accompanyAudioStartTime;
+    [_player play];
+    
     _status = KCRecorderStatusRecording;
     
     !_recordStatusBlock ? : _recordStatusBlock(self, _status);
     [self addTimer];
+    
 }
 
 - (void)stop
@@ -317,8 +418,10 @@
     if (_status == KCRecorderStatusStopped) {
         return;
     }
+    
     [_filter removeTarget:_writer];
     _camera.audioEncodingTarget = nil;
+    [_player pause];
     [_writer finishRecordingWithCompletionHandler:^{
         
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -339,6 +442,8 @@
         return;
     }
     [_writer setPaused:NO];
+    _player.rate = self.accompanyAudioRate;
+    [_player play];
     _status = KCRecorderStatusRecording;
     !_recordStatusBlock ? : _recordStatusBlock(self, _status);
     [self addTimer];
@@ -351,6 +456,7 @@
         return;
     }
     [_writer setPaused:YES];
+    [_player pause];
     _status = KCRecorderStatusPaused;
     !_recordStatusBlock ? : _recordStatusBlock(self, _status);
     [self removeTimer];
@@ -427,6 +533,12 @@
         _currentTime += item.duration;
     }
     !_currentTimeBlock ? : _currentTimeBlock(self, _currentTime);
+}
+
+#pragma mark -GPUImageVideoCameraDelegate
+- (void)willOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
+{
+    
 }
 
 @end

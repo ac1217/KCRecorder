@@ -31,8 +31,9 @@ typedef enum : NSUInteger {
 
 @optional
 - (NSTimeInterval)durationWithRecorder:(KCRecorder *)recorder;
-- (NSURL *)accompanyAudioWithRecorder:(KCRecorder *)recorder;
+- (NSURL *)accompanyAudioURLWithRecorder:(KCRecorder *)recorder;
 - (NSTimeInterval)accompanyAudioStartTimeWithRecorder:(KCRecorder *)recorder;
+- (float)accompanyAudioRateWithRecorder:(KCRecorder *)recorder;
 
 @end
 
@@ -74,6 +75,9 @@ typedef enum : NSUInteger {
 
 @property (nonatomic,copy) NSString *sessionPreset;
 @property (nonatomic,assign) AVCaptureDevicePosition cameraPosition;
+
+@property(nonatomic) CGPoint focusPointOfInterest;
+@property(nonatomic) AVCaptureFocusMode focusMode;
 
 @property (nonatomic,assign) CGSize videoSize;
 @property (nonatomic,copy) NSString *fileType;

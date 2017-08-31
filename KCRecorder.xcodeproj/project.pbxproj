@@ -48,6 +48,7 @@
 		8849A72A1F57A7F6009005DD /* KCConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 8849A70F1F57A7F6009005DD /* KCConst.m */; };
 		8849A72B1F57A7F6009005DD /* KCFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = 8849A7111F57A7F6009005DD /* KCFunction.m */; };
 		8849A72E1F57AABA009005DD /* KCRecorderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8849A72D1F57AABA009005DD /* KCRecorderView.m */; };
+		8849A7301F57DF98009005DD /* abc.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 8849A72F1F57DF98009005DD /* abc.m4a */; };
 		BD14ADAE2E35C9238886BA1A /* libPods-KCRecorderUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C7A73FAC83D85242B0267774 /* libPods-KCRecorderUITests.a */; };
 		F0439A4018487A5509648712 /* libPods-KCRecorderTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FB7528DE3AC4C034E9640A0 /* libPods-KCRecorderTests.a */; };
 		F36CD02B65968FE44B7293AB /* libPods-KCRecorder.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CE02637CC3B072474767EAB /* libPods-KCRecorder.a */; };
@@ -158,6 +159,7 @@
 		8849A7121F57A7F6009005DD /* KCMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KCMacro.h; sourceTree = "<group>"; };
 		8849A72C1F57AABA009005DD /* KCRecorderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KCRecorderView.h; sourceTree = "<group>"; };
 		8849A72D1F57AABA009005DD /* KCRecorderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KCRecorderView.m; sourceTree = "<group>"; };
+		8849A72F1F57DF98009005DD /* abc.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = abc.m4a; sourceTree = "<group>"; };
 		96753B1C9F1D2534EF70414A /* Pods-KCRecorderTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KCRecorderTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KCRecorderTests/Pods-KCRecorderTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9A9A32365BEC4AFA6A8649B6 /* Pods-KCRecorder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KCRecorder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KCRecorder/Pods-KCRecorder.debug.xcconfig"; sourceTree = "<group>"; };
 		AFA64D07D0774444AEE13C9E /* Pods-KCRecorderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KCRecorderTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-KCRecorderTests/Pods-KCRecorderTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -262,6 +264,7 @@
 		882B4FB01F56533B0097F20D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8849A72F1F57DF98009005DD /* abc.m4a */,
 				882B4FB11F56533B0097F20D /* main.m */,
 			);
 			name = "Supporting Files";
@@ -522,6 +525,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				882B4FC01F56533B0097F20D /* LaunchScreen.storyboard in Resources */,
+				8849A7301F57DF98009005DD /* abc.m4a in Resources */,
 				882B4FBD1F56533B0097F20D /* Assets.xcassets in Resources */,
 				882B4FBB1F56533B0097F20D /* Main.storyboard in Resources */,
 			);

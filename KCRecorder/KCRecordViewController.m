@@ -14,7 +14,6 @@
 
 @interface KCRecordViewController ()<KCRecorderDataSource>
 @property (strong, nonatomic) KSProgressView *progressView;
-@property (weak, nonatomic) IBOutlet UITextField *tf;
 @property (nonatomic,strong) KCRecorder *recorder;
 @end
 
@@ -28,7 +27,7 @@
         _recorder.dataSource = self;
         _recorder.timeInterval = 0.1;
         _recorder.fileType = AVFileTypeMPEG4;
-        _recorder.track = KCRecorderTrackVideo;
+        _recorder.track = KCRecorderTrackBoth;
         _recorder.view.frame = self.view.bounds;
         [_recorder setFilter:self.recorder.beautifyFilter];
         _recorder.currentTimeBlock = ^(KCRecorder *recorder, NSTimeInterval currentTime) {
@@ -93,6 +92,22 @@
 }
 
 #pragma mark -KCRecorderDataSource
+
+- (float)accompanyAudioRateWithRecorder:(KCRecorder *)recorder
+{
+    return 0.5;
+}
+
+- (NSTimeInterval)accompanyAudioStartTimeWithRecorder:(KCRecorder *)recorder
+{
+    return 47;
+}
+
+- (NSURL *)accompanyAudioURLWithRecorder:(KCRecorder *)recorder
+{
+    return [[NSBundle mainBundle] URLForResource:@"abc" withExtension:@"m4a"];
+}
+
 - (NSURL *)recorder:(KCRecorder *)recorder destinationURLWithCurrentTime:(NSTimeInterval)currentTime
 {
     NSString *cachePath = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES).lastObject;
@@ -131,17 +146,6 @@
 - (IBAction)exchange:(id)sender {
     
     [self.recorder switchCamera];
-}
-- (IBAction)seek:(id)sender {
-    
-    NSInteger num = self.tf.text.integerValue;
-    
-    self.recorder.currentTime = num;
-    
-    [self.progressView setProgress:self.recorder.currentTime / self.recorder.duration animated:YES];
-    
-    [self.view endEditing:YES];
-    
 }
 - (IBAction)torne:(id)sender {
     
