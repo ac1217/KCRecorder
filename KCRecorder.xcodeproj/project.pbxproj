@@ -9,12 +9,48 @@
 /* Begin PBXBuildFile section */
 		882B4FB21F56533B0097F20D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 882B4FB11F56533B0097F20D /* main.m */; };
 		882B4FB51F56533B0097F20D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 882B4FB41F56533B0097F20D /* AppDelegate.m */; };
-		882B4FB81F56533B0097F20D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 882B4FB71F56533B0097F20D /* ViewController.m */; };
+		882B4FB81F56533B0097F20D /* KCRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 882B4FB71F56533B0097F20D /* KCRecordViewController.m */; };
 		882B4FBB1F56533B0097F20D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 882B4FB91F56533B0097F20D /* Main.storyboard */; };
 		882B4FBD1F56533B0097F20D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 882B4FBC1F56533B0097F20D /* Assets.xcassets */; };
 		882B4FC01F56533B0097F20D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 882B4FBE1F56533B0097F20D /* LaunchScreen.storyboard */; };
 		882B4FCB1F56533C0097F20D /* KCRecorderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 882B4FCA1F56533C0097F20D /* KCRecorderTests.m */; };
 		882B4FD61F56533C0097F20D /* KCRecorderUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 882B4FD51F56533C0097F20D /* KCRecorderUITests.m */; };
+		882B4FE81F5653A50097F20D /* KCRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 882B4FE71F5653A50097F20D /* KCRecorder.m */; };
+		882B4FF11F566E060097F20D /* KCVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 882B4FF01F566E060097F20D /* KCVideoViewController.m */; };
+		8849A6C71F566FC6009005DD /* KSPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8849A6C41F566FC6009005DD /* KSPlayer.m */; };
+		8849A6C81F566FC6009005DD /* KSPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8849A6C61F566FC6009005DD /* KSPlayerView.m */; };
+		8849A6D21F57A0E3009005DD /* KCRecorderItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 8849A6D11F57A0E3009005DD /* KCRecorderItem.m */; };
+		8849A6D51F57A5BA009005DD /* KSProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8849A6D41F57A5BA009005DD /* KSProgressView.m */; };
+		8849A6D81F57A633009005DD /* KSVideoListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8849A6D71F57A633009005DD /* KSVideoListController.m */; };
+		8849A7131F57A7F6009005DD /* NSArray+KCExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 8849A6DD1F57A7F6009005DD /* NSArray+KCExtension.m */; };
+		8849A7141F57A7F6009005DD /* NSAttributedString+KCExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 8849A6DF1F57A7F6009005DD /* NSAttributedString+KCExtension.m */; };
+		8849A7151F57A7F6009005DD /* NSData+KCExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 8849A6E11F57A7F6009005DD /* NSData+KCExtension.m */; };
+		8849A7161F57A7F6009005DD /* NSDate+KCExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 8849A6E31F57A7F6009005DD /* NSDate+KCExtension.m */; };
+		8849A7171F57A7F6009005DD /* NSDictionary+KCExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 8849A6E51F57A7F6009005DD /* NSDictionary+KCExtension.m */; };
+		8849A7181F57A7F6009005DD /* NSMutableArray+KCExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 8849A6E71F57A7F6009005DD /* NSMutableArray+KCExtension.m */; };
+		8849A7191F57A7F6009005DD /* NSMutableDictionary+KCExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 8849A6E91F57A7F6009005DD /* NSMutableDictionary+KCExtension.m */; };
+		8849A71A1F57A7F6009005DD /* NSString+KCExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 8849A6EB1F57A7F6009005DD /* NSString+KCExtension.m */; };
+		8849A71B1F57A7F6009005DD /* NSTimer+KCExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 8849A6ED1F57A7F6009005DD /* NSTimer+KCExtension.m */; };
+		8849A71C1F57A7F6009005DD /* CADisplayLink+KCExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 8849A6F01F57A7F6009005DD /* CADisplayLink+KCExtension.m */; };
+		8849A71D1F57A7F6009005DD /* CALayer+KCExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 8849A6F21F57A7F6009005DD /* CALayer+KCExtension.m */; };
+		8849A71E1F57A7F6009005DD /* UIButton+KCExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 8849A6F51F57A7F6009005DD /* UIButton+KCExtension.m */; };
+		8849A71F1F57A7F6009005DD /* UIColor+KCExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 8849A6F71F57A7F6009005DD /* UIColor+KCExtension.m */; };
+		8849A7201F57A7F6009005DD /* UIDevice+KCExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 8849A6F91F57A7F6009005DD /* UIDevice+KCExtension.m */; };
+		8849A7211F57A7F6009005DD /* UIImage+KCExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 8849A6FB1F57A7F6009005DD /* UIImage+KCExtension.m */; };
+		8849A7221F57A7F6009005DD /* UIImageView+KCExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 8849A6FD1F57A7F6009005DD /* UIImageView+KCExtension.m */; };
+		8849A7231F57A7F6009005DD /* UINavigationBar+KCExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 8849A6FF1F57A7F6009005DD /* UINavigationBar+KCExtension.m */; };
+		8849A7241F57A7F6009005DD /* UIScrollView+KSExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 8849A7011F57A7F6009005DD /* UIScrollView+KSExtension.m */; };
+		8849A7251F57A7F6009005DD /* UITextField+KCExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 8849A7031F57A7F6009005DD /* UITextField+KCExtension.m */; };
+		8849A7261F57A7F6009005DD /* UITextView+KCExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 8849A7051F57A7F6009005DD /* UITextView+KCExtension.m */; };
+		8849A7271F57A7F6009005DD /* UIView+KCExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 8849A7071F57A7F6009005DD /* UIView+KCExtension.m */; };
+		8849A7281F57A7F6009005DD /* UIViewController+KCExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 8849A7091F57A7F6009005DD /* UIViewController+KCExtension.m */; };
+		8849A7291F57A7F6009005DD /* UIVisualEffectView+KCExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 8849A70B1F57A7F6009005DD /* UIVisualEffectView+KCExtension.m */; };
+		8849A72A1F57A7F6009005DD /* KCConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 8849A70F1F57A7F6009005DD /* KCConst.m */; };
+		8849A72B1F57A7F6009005DD /* KCFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = 8849A7111F57A7F6009005DD /* KCFunction.m */; };
+		8849A72E1F57AABA009005DD /* KCRecorderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8849A72D1F57AABA009005DD /* KCRecorderView.m */; };
+		BD14ADAE2E35C9238886BA1A /* libPods-KCRecorderUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C7A73FAC83D85242B0267774 /* libPods-KCRecorderUITests.a */; };
+		F0439A4018487A5509648712 /* libPods-KCRecorderTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FB7528DE3AC4C034E9640A0 /* libPods-KCRecorderTests.a */; };
+		F36CD02B65968FE44B7293AB /* libPods-KCRecorder.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CE02637CC3B072474767EAB /* libPods-KCRecorder.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,12 +71,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4F9DF653D7383F42809F1E9E /* Pods-KCRecorder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KCRecorder.release.xcconfig"; path = "Pods/Target Support Files/Pods-KCRecorder/Pods-KCRecorder.release.xcconfig"; sourceTree = "<group>"; };
+		5CE02637CC3B072474767EAB /* libPods-KCRecorder.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KCRecorder.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7FB7528DE3AC4C034E9640A0 /* libPods-KCRecorderTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KCRecorderTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		882B4FAD1F56533B0097F20D /* KCRecorder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KCRecorder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		882B4FB11F56533B0097F20D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		882B4FB31F56533B0097F20D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		882B4FB41F56533B0097F20D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		882B4FB61F56533B0097F20D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		882B4FB71F56533B0097F20D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		882B4FB61F56533B0097F20D /* KCRecordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KCRecordViewController.h; sourceTree = "<group>"; };
+		882B4FB71F56533B0097F20D /* KCRecordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KCRecordViewController.m; sourceTree = "<group>"; };
 		882B4FBA1F56533B0097F20D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		882B4FBC1F56533B0097F20D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		882B4FBF1F56533B0097F20D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +90,80 @@
 		882B4FD11F56533C0097F20D /* KCRecorderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KCRecorderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		882B4FD51F56533C0097F20D /* KCRecorderUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KCRecorderUITests.m; sourceTree = "<group>"; };
 		882B4FD71F56533C0097F20D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		882B4FE61F5653A50097F20D /* KCRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KCRecorder.h; sourceTree = "<group>"; };
+		882B4FE71F5653A50097F20D /* KCRecorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KCRecorder.m; sourceTree = "<group>"; };
+		882B4FEF1F566E060097F20D /* KCVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KCVideoViewController.h; sourceTree = "<group>"; };
+		882B4FF01F566E060097F20D /* KCVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KCVideoViewController.m; sourceTree = "<group>"; };
+		8849A6C31F566FC6009005DD /* KSPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSPlayer.h; sourceTree = "<group>"; };
+		8849A6C41F566FC6009005DD /* KSPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSPlayer.m; sourceTree = "<group>"; };
+		8849A6C51F566FC6009005DD /* KSPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSPlayerView.h; sourceTree = "<group>"; };
+		8849A6C61F566FC6009005DD /* KSPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSPlayerView.m; sourceTree = "<group>"; };
+		8849A6D01F57A0E3009005DD /* KCRecorderItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KCRecorderItem.h; sourceTree = "<group>"; };
+		8849A6D11F57A0E3009005DD /* KCRecorderItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KCRecorderItem.m; sourceTree = "<group>"; };
+		8849A6D31F57A5BA009005DD /* KSProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSProgressView.h; sourceTree = "<group>"; };
+		8849A6D41F57A5BA009005DD /* KSProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSProgressView.m; sourceTree = "<group>"; };
+		8849A6D61F57A633009005DD /* KSVideoListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSVideoListController.h; sourceTree = "<group>"; };
+		8849A6D71F57A633009005DD /* KSVideoListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSVideoListController.m; sourceTree = "<group>"; };
+		8849A6DC1F57A7F6009005DD /* NSArray+KCExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+KCExtension.h"; sourceTree = "<group>"; };
+		8849A6DD1F57A7F6009005DD /* NSArray+KCExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+KCExtension.m"; sourceTree = "<group>"; };
+		8849A6DE1F57A7F6009005DD /* NSAttributedString+KCExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+KCExtension.h"; sourceTree = "<group>"; };
+		8849A6DF1F57A7F6009005DD /* NSAttributedString+KCExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+KCExtension.m"; sourceTree = "<group>"; };
+		8849A6E01F57A7F6009005DD /* NSData+KCExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+KCExtension.h"; sourceTree = "<group>"; };
+		8849A6E11F57A7F6009005DD /* NSData+KCExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+KCExtension.m"; sourceTree = "<group>"; };
+		8849A6E21F57A7F6009005DD /* NSDate+KCExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+KCExtension.h"; sourceTree = "<group>"; };
+		8849A6E31F57A7F6009005DD /* NSDate+KCExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+KCExtension.m"; sourceTree = "<group>"; };
+		8849A6E41F57A7F6009005DD /* NSDictionary+KCExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+KCExtension.h"; sourceTree = "<group>"; };
+		8849A6E51F57A7F6009005DD /* NSDictionary+KCExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+KCExtension.m"; sourceTree = "<group>"; };
+		8849A6E61F57A7F6009005DD /* NSMutableArray+KCExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+KCExtension.h"; sourceTree = "<group>"; };
+		8849A6E71F57A7F6009005DD /* NSMutableArray+KCExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+KCExtension.m"; sourceTree = "<group>"; };
+		8849A6E81F57A7F6009005DD /* NSMutableDictionary+KCExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+KCExtension.h"; sourceTree = "<group>"; };
+		8849A6E91F57A7F6009005DD /* NSMutableDictionary+KCExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+KCExtension.m"; sourceTree = "<group>"; };
+		8849A6EA1F57A7F6009005DD /* NSString+KCExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+KCExtension.h"; sourceTree = "<group>"; };
+		8849A6EB1F57A7F6009005DD /* NSString+KCExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+KCExtension.m"; sourceTree = "<group>"; };
+		8849A6EC1F57A7F6009005DD /* NSTimer+KCExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+KCExtension.h"; sourceTree = "<group>"; };
+		8849A6ED1F57A7F6009005DD /* NSTimer+KCExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+KCExtension.m"; sourceTree = "<group>"; };
+		8849A6EF1F57A7F6009005DD /* CADisplayLink+KCExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CADisplayLink+KCExtension.h"; sourceTree = "<group>"; };
+		8849A6F01F57A7F6009005DD /* CADisplayLink+KCExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CADisplayLink+KCExtension.m"; sourceTree = "<group>"; };
+		8849A6F11F57A7F6009005DD /* CALayer+KCExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+KCExtension.h"; sourceTree = "<group>"; };
+		8849A6F21F57A7F6009005DD /* CALayer+KCExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+KCExtension.m"; sourceTree = "<group>"; };
+		8849A6F41F57A7F6009005DD /* UIButton+KCExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+KCExtension.h"; sourceTree = "<group>"; };
+		8849A6F51F57A7F6009005DD /* UIButton+KCExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+KCExtension.m"; sourceTree = "<group>"; };
+		8849A6F61F57A7F6009005DD /* UIColor+KCExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+KCExtension.h"; sourceTree = "<group>"; };
+		8849A6F71F57A7F6009005DD /* UIColor+KCExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+KCExtension.m"; sourceTree = "<group>"; };
+		8849A6F81F57A7F6009005DD /* UIDevice+KCExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+KCExtension.h"; sourceTree = "<group>"; };
+		8849A6F91F57A7F6009005DD /* UIDevice+KCExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+KCExtension.m"; sourceTree = "<group>"; };
+		8849A6FA1F57A7F6009005DD /* UIImage+KCExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+KCExtension.h"; sourceTree = "<group>"; };
+		8849A6FB1F57A7F6009005DD /* UIImage+KCExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+KCExtension.m"; sourceTree = "<group>"; };
+		8849A6FC1F57A7F6009005DD /* UIImageView+KCExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+KCExtension.h"; sourceTree = "<group>"; };
+		8849A6FD1F57A7F6009005DD /* UIImageView+KCExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+KCExtension.m"; sourceTree = "<group>"; };
+		8849A6FE1F57A7F6009005DD /* UINavigationBar+KCExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+KCExtension.h"; sourceTree = "<group>"; };
+		8849A6FF1F57A7F6009005DD /* UINavigationBar+KCExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+KCExtension.m"; sourceTree = "<group>"; };
+		8849A7001F57A7F6009005DD /* UIScrollView+KSExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+KSExtension.h"; sourceTree = "<group>"; };
+		8849A7011F57A7F6009005DD /* UIScrollView+KSExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+KSExtension.m"; sourceTree = "<group>"; };
+		8849A7021F57A7F6009005DD /* UITextField+KCExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+KCExtension.h"; sourceTree = "<group>"; };
+		8849A7031F57A7F6009005DD /* UITextField+KCExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+KCExtension.m"; sourceTree = "<group>"; };
+		8849A7041F57A7F6009005DD /* UITextView+KCExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+KCExtension.h"; sourceTree = "<group>"; };
+		8849A7051F57A7F6009005DD /* UITextView+KCExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+KCExtension.m"; sourceTree = "<group>"; };
+		8849A7061F57A7F6009005DD /* UIView+KCExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+KCExtension.h"; sourceTree = "<group>"; };
+		8849A7071F57A7F6009005DD /* UIView+KCExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+KCExtension.m"; sourceTree = "<group>"; };
+		8849A7081F57A7F6009005DD /* UIViewController+KCExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+KCExtension.h"; sourceTree = "<group>"; };
+		8849A7091F57A7F6009005DD /* UIViewController+KCExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+KCExtension.m"; sourceTree = "<group>"; };
+		8849A70A1F57A7F6009005DD /* UIVisualEffectView+KCExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIVisualEffectView+KCExtension.h"; sourceTree = "<group>"; };
+		8849A70B1F57A7F6009005DD /* UIVisualEffectView+KCExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIVisualEffectView+KCExtension.m"; sourceTree = "<group>"; };
+		8849A70C1F57A7F6009005DD /* KCCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KCCategory.h; sourceTree = "<group>"; };
+		8849A70E1F57A7F6009005DD /* KCConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KCConst.h; sourceTree = "<group>"; };
+		8849A70F1F57A7F6009005DD /* KCConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KCConst.m; sourceTree = "<group>"; };
+		8849A7101F57A7F6009005DD /* KCFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KCFunction.h; sourceTree = "<group>"; };
+		8849A7111F57A7F6009005DD /* KCFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KCFunction.m; sourceTree = "<group>"; };
+		8849A7121F57A7F6009005DD /* KCMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KCMacro.h; sourceTree = "<group>"; };
+		8849A72C1F57AABA009005DD /* KCRecorderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KCRecorderView.h; sourceTree = "<group>"; };
+		8849A72D1F57AABA009005DD /* KCRecorderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KCRecorderView.m; sourceTree = "<group>"; };
+		96753B1C9F1D2534EF70414A /* Pods-KCRecorderTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KCRecorderTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KCRecorderTests/Pods-KCRecorderTests.debug.xcconfig"; sourceTree = "<group>"; };
+		9A9A32365BEC4AFA6A8649B6 /* Pods-KCRecorder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KCRecorder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KCRecorder/Pods-KCRecorder.debug.xcconfig"; sourceTree = "<group>"; };
+		AFA64D07D0774444AEE13C9E /* Pods-KCRecorderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KCRecorderTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-KCRecorderTests/Pods-KCRecorderTests.release.xcconfig"; sourceTree = "<group>"; };
+		B4551FCFCCB013CB3EB29414 /* Pods-KCRecorderUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KCRecorderUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KCRecorderUITests/Pods-KCRecorderUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		C7A73FAC83D85242B0267774 /* libPods-KCRecorderUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KCRecorderUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF3F127DF567F300B55E1974 /* Pods-KCRecorderUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KCRecorderUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-KCRecorderUITests/Pods-KCRecorderUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +171,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F36CD02B65968FE44B7293AB /* libPods-KCRecorder.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +179,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0439A4018487A5509648712 /* libPods-KCRecorderTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,12 +187,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD14ADAE2E35C9238886BA1A /* libPods-KCRecorderUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		36131B9872A189495570F2A1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9A9A32365BEC4AFA6A8649B6 /* Pods-KCRecorder.debug.xcconfig */,
+				4F9DF653D7383F42809F1E9E /* Pods-KCRecorder.release.xcconfig */,
+				96753B1C9F1D2534EF70414A /* Pods-KCRecorderTests.debug.xcconfig */,
+				AFA64D07D0774444AEE13C9E /* Pods-KCRecorderTests.release.xcconfig */,
+				B4551FCFCCB013CB3EB29414 /* Pods-KCRecorderUITests.debug.xcconfig */,
+				CF3F127DF567F300B55E1974 /* Pods-KCRecorderUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		882B4FA41F56533B0097F20D = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +214,8 @@
 				882B4FC91F56533C0097F20D /* KCRecorderTests */,
 				882B4FD41F56533C0097F20D /* KCRecorderUITests */,
 				882B4FAE1F56533B0097F20D /* Products */,
+				36131B9872A189495570F2A1 /* Pods */,
+				F84C66337B2B226F949DA16C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,15 +232,29 @@
 		882B4FAF1F56533B0097F20D /* KCRecorder */ = {
 			isa = PBXGroup;
 			children = (
+				8849A6D91F57A7F6009005DD /* KCCategory */,
+				8849A6D31F57A5BA009005DD /* KSProgressView.h */,
+				8849A6D41F57A5BA009005DD /* KSProgressView.m */,
+				8849A6C21F566FC6009005DD /* KSPlayer */,
 				882B4FB31F56533B0097F20D /* AppDelegate.h */,
 				882B4FB41F56533B0097F20D /* AppDelegate.m */,
-				882B4FB61F56533B0097F20D /* ViewController.h */,
-				882B4FB71F56533B0097F20D /* ViewController.m */,
+				8849A6D61F57A633009005DD /* KSVideoListController.h */,
+				8849A6D71F57A633009005DD /* KSVideoListController.m */,
+				882B4FEF1F566E060097F20D /* KCVideoViewController.h */,
+				882B4FF01F566E060097F20D /* KCVideoViewController.m */,
+				882B4FB61F56533B0097F20D /* KCRecordViewController.h */,
+				882B4FB71F56533B0097F20D /* KCRecordViewController.m */,
 				882B4FB91F56533B0097F20D /* Main.storyboard */,
 				882B4FBC1F56533B0097F20D /* Assets.xcassets */,
 				882B4FBE1F56533B0097F20D /* LaunchScreen.storyboard */,
 				882B4FC11F56533B0097F20D /* Info.plist */,
 				882B4FB01F56533B0097F20D /* Supporting Files */,
+				882B4FE61F5653A50097F20D /* KCRecorder.h */,
+				882B4FE71F5653A50097F20D /* KCRecorder.m */,
+				8849A6D01F57A0E3009005DD /* KCRecorderItem.h */,
+				8849A6D11F57A0E3009005DD /* KCRecorderItem.m */,
+				8849A72C1F57AABA009005DD /* KCRecorderView.h */,
+				8849A72D1F57AABA009005DD /* KCRecorderView.m */,
 			);
 			path = KCRecorder;
 			sourceTree = "<group>";
@@ -140,6 +285,126 @@
 			path = KCRecorderUITests;
 			sourceTree = "<group>";
 		};
+		8849A6C21F566FC6009005DD /* KSPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				8849A6C31F566FC6009005DD /* KSPlayer.h */,
+				8849A6C41F566FC6009005DD /* KSPlayer.m */,
+				8849A6C51F566FC6009005DD /* KSPlayerView.h */,
+				8849A6C61F566FC6009005DD /* KSPlayerView.m */,
+			);
+			path = KSPlayer;
+			sourceTree = "<group>";
+		};
+		8849A6D91F57A7F6009005DD /* KCCategory */ = {
+			isa = PBXGroup;
+			children = (
+				8849A6DA1F57A7F6009005DD /* Category */,
+				8849A70C1F57A7F6009005DD /* KCCategory.h */,
+				8849A70D1F57A7F6009005DD /* Macro */,
+			);
+			path = KCCategory;
+			sourceTree = "<group>";
+		};
+		8849A6DA1F57A7F6009005DD /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				8849A6DB1F57A7F6009005DD /* Foundation */,
+				8849A6EE1F57A7F6009005DD /* QuartzCore */,
+				8849A6F31F57A7F6009005DD /* UIKit */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		8849A6DB1F57A7F6009005DD /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				8849A6DC1F57A7F6009005DD /* NSArray+KCExtension.h */,
+				8849A6DD1F57A7F6009005DD /* NSArray+KCExtension.m */,
+				8849A6DE1F57A7F6009005DD /* NSAttributedString+KCExtension.h */,
+				8849A6DF1F57A7F6009005DD /* NSAttributedString+KCExtension.m */,
+				8849A6E01F57A7F6009005DD /* NSData+KCExtension.h */,
+				8849A6E11F57A7F6009005DD /* NSData+KCExtension.m */,
+				8849A6E21F57A7F6009005DD /* NSDate+KCExtension.h */,
+				8849A6E31F57A7F6009005DD /* NSDate+KCExtension.m */,
+				8849A6E41F57A7F6009005DD /* NSDictionary+KCExtension.h */,
+				8849A6E51F57A7F6009005DD /* NSDictionary+KCExtension.m */,
+				8849A6E61F57A7F6009005DD /* NSMutableArray+KCExtension.h */,
+				8849A6E71F57A7F6009005DD /* NSMutableArray+KCExtension.m */,
+				8849A6E81F57A7F6009005DD /* NSMutableDictionary+KCExtension.h */,
+				8849A6E91F57A7F6009005DD /* NSMutableDictionary+KCExtension.m */,
+				8849A6EA1F57A7F6009005DD /* NSString+KCExtension.h */,
+				8849A6EB1F57A7F6009005DD /* NSString+KCExtension.m */,
+				8849A6EC1F57A7F6009005DD /* NSTimer+KCExtension.h */,
+				8849A6ED1F57A7F6009005DD /* NSTimer+KCExtension.m */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		8849A6EE1F57A7F6009005DD /* QuartzCore */ = {
+			isa = PBXGroup;
+			children = (
+				8849A6EF1F57A7F6009005DD /* CADisplayLink+KCExtension.h */,
+				8849A6F01F57A7F6009005DD /* CADisplayLink+KCExtension.m */,
+				8849A6F11F57A7F6009005DD /* CALayer+KCExtension.h */,
+				8849A6F21F57A7F6009005DD /* CALayer+KCExtension.m */,
+			);
+			path = QuartzCore;
+			sourceTree = "<group>";
+		};
+		8849A6F31F57A7F6009005DD /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				8849A6F41F57A7F6009005DD /* UIButton+KCExtension.h */,
+				8849A6F51F57A7F6009005DD /* UIButton+KCExtension.m */,
+				8849A6F61F57A7F6009005DD /* UIColor+KCExtension.h */,
+				8849A6F71F57A7F6009005DD /* UIColor+KCExtension.m */,
+				8849A6F81F57A7F6009005DD /* UIDevice+KCExtension.h */,
+				8849A6F91F57A7F6009005DD /* UIDevice+KCExtension.m */,
+				8849A6FA1F57A7F6009005DD /* UIImage+KCExtension.h */,
+				8849A6FB1F57A7F6009005DD /* UIImage+KCExtension.m */,
+				8849A6FC1F57A7F6009005DD /* UIImageView+KCExtension.h */,
+				8849A6FD1F57A7F6009005DD /* UIImageView+KCExtension.m */,
+				8849A6FE1F57A7F6009005DD /* UINavigationBar+KCExtension.h */,
+				8849A6FF1F57A7F6009005DD /* UINavigationBar+KCExtension.m */,
+				8849A7001F57A7F6009005DD /* UIScrollView+KSExtension.h */,
+				8849A7011F57A7F6009005DD /* UIScrollView+KSExtension.m */,
+				8849A7021F57A7F6009005DD /* UITextField+KCExtension.h */,
+				8849A7031F57A7F6009005DD /* UITextField+KCExtension.m */,
+				8849A7041F57A7F6009005DD /* UITextView+KCExtension.h */,
+				8849A7051F57A7F6009005DD /* UITextView+KCExtension.m */,
+				8849A7061F57A7F6009005DD /* UIView+KCExtension.h */,
+				8849A7071F57A7F6009005DD /* UIView+KCExtension.m */,
+				8849A7081F57A7F6009005DD /* UIViewController+KCExtension.h */,
+				8849A7091F57A7F6009005DD /* UIViewController+KCExtension.m */,
+				8849A70A1F57A7F6009005DD /* UIVisualEffectView+KCExtension.h */,
+				8849A70B1F57A7F6009005DD /* UIVisualEffectView+KCExtension.m */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		8849A70D1F57A7F6009005DD /* Macro */ = {
+			isa = PBXGroup;
+			children = (
+				8849A70E1F57A7F6009005DD /* KCConst.h */,
+				8849A70F1F57A7F6009005DD /* KCConst.m */,
+				8849A7101F57A7F6009005DD /* KCFunction.h */,
+				8849A7111F57A7F6009005DD /* KCFunction.m */,
+				8849A7121F57A7F6009005DD /* KCMacro.h */,
+			);
+			path = Macro;
+			sourceTree = "<group>";
+		};
+		F84C66337B2B226F949DA16C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5CE02637CC3B072474767EAB /* libPods-KCRecorder.a */,
+				7FB7528DE3AC4C034E9640A0 /* libPods-KCRecorderTests.a */,
+				C7A73FAC83D85242B0267774 /* libPods-KCRecorderUITests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -147,9 +412,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 882B4FDA1F56533C0097F20D /* Build configuration list for PBXNativeTarget "KCRecorder" */;
 			buildPhases = (
+				CDAF0DF876E777F04F4A564A /* [CP] Check Pods Manifest.lock */,
 				882B4FA91F56533B0097F20D /* Sources */,
 				882B4FAA1F56533B0097F20D /* Frameworks */,
 				882B4FAB1F56533B0097F20D /* Resources */,
+				12AFA92A3F43AAF6886ACDBE /* [CP] Embed Pods Frameworks */,
+				34731DF3717D19CD40B3CE41 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -164,9 +432,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 882B4FDD1F56533C0097F20D /* Build configuration list for PBXNativeTarget "KCRecorderTests" */;
 			buildPhases = (
+				30D561894FAADF93E53E9A85 /* [CP] Check Pods Manifest.lock */,
 				882B4FC21F56533B0097F20D /* Sources */,
 				882B4FC31F56533B0097F20D /* Frameworks */,
 				882B4FC41F56533B0097F20D /* Resources */,
+				61F02259DF494535B368F7D7 /* [CP] Embed Pods Frameworks */,
+				19666144669582543CD41158 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -182,9 +453,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 882B4FE01F56533C0097F20D /* Build configuration list for PBXNativeTarget "KCRecorderUITests" */;
 			buildPhases = (
+				5FF8B2C0AADD7DED7E0CF78E /* [CP] Check Pods Manifest.lock */,
 				882B4FCD1F56533C0097F20D /* Sources */,
 				882B4FCE1F56533C0097F20D /* Frameworks */,
 				882B4FCF1F56533C0097F20D /* Resources */,
+				D1D10B4CE4551445031E5304 /* [CP] Embed Pods Frameworks */,
+				65342FCF18E8928EB9EFE370 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -207,6 +481,7 @@
 				TargetAttributes = {
 					882B4FAC1F56533B0097F20D = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 9W8KXJ7KY8;
 						ProvisioningStyle = Automatic;
 					};
 					882B4FC51F56533B0097F20D = {
@@ -268,14 +543,185 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		12AFA92A3F43AAF6886ACDBE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KCRecorder/Pods-KCRecorder-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		19666144669582543CD41158 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KCRecorderTests/Pods-KCRecorderTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		30D561894FAADF93E53E9A85 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		34731DF3717D19CD40B3CE41 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KCRecorder/Pods-KCRecorder-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5FF8B2C0AADD7DED7E0CF78E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		61F02259DF494535B368F7D7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KCRecorderTests/Pods-KCRecorderTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		65342FCF18E8928EB9EFE370 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KCRecorderUITests/Pods-KCRecorderUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CDAF0DF876E777F04F4A564A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D1D10B4CE4551445031E5304 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KCRecorderUITests/Pods-KCRecorderUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		882B4FA91F56533B0097F20D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				882B4FB81F56533B0097F20D /* ViewController.m in Sources */,
+				8849A6D51F57A5BA009005DD /* KSProgressView.m in Sources */,
+				8849A71A1F57A7F6009005DD /* NSString+KCExtension.m in Sources */,
+				8849A6C71F566FC6009005DD /* KSPlayer.m in Sources */,
+				8849A71F1F57A7F6009005DD /* UIColor+KCExtension.m in Sources */,
+				8849A71E1F57A7F6009005DD /* UIButton+KCExtension.m in Sources */,
+				882B4FB81F56533B0097F20D /* KCRecordViewController.m in Sources */,
+				882B4FF11F566E060097F20D /* KCVideoViewController.m in Sources */,
 				882B4FB51F56533B0097F20D /* AppDelegate.m in Sources */,
 				882B4FB21F56533B0097F20D /* main.m in Sources */,
+				8849A7191F57A7F6009005DD /* NSMutableDictionary+KCExtension.m in Sources */,
+				8849A71D1F57A7F6009005DD /* CALayer+KCExtension.m in Sources */,
+				8849A7261F57A7F6009005DD /* UITextView+KCExtension.m in Sources */,
+				8849A7281F57A7F6009005DD /* UIViewController+KCExtension.m in Sources */,
+				8849A7241F57A7F6009005DD /* UIScrollView+KSExtension.m in Sources */,
+				8849A7291F57A7F6009005DD /* UIVisualEffectView+KCExtension.m in Sources */,
+				8849A72A1F57A7F6009005DD /* KCConst.m in Sources */,
+				8849A72B1F57A7F6009005DD /* KCFunction.m in Sources */,
+				8849A7251F57A7F6009005DD /* UITextField+KCExtension.m in Sources */,
+				8849A7171F57A7F6009005DD /* NSDictionary+KCExtension.m in Sources */,
+				8849A7211F57A7F6009005DD /* UIImage+KCExtension.m in Sources */,
+				8849A7181F57A7F6009005DD /* NSMutableArray+KCExtension.m in Sources */,
+				8849A7201F57A7F6009005DD /* UIDevice+KCExtension.m in Sources */,
+				8849A72E1F57AABA009005DD /* KCRecorderView.m in Sources */,
+				8849A7151F57A7F6009005DD /* NSData+KCExtension.m in Sources */,
+				882B4FE81F5653A50097F20D /* KCRecorder.m in Sources */,
+				8849A7161F57A7F6009005DD /* NSDate+KCExtension.m in Sources */,
+				8849A7221F57A7F6009005DD /* UIImageView+KCExtension.m in Sources */,
+				8849A6D81F57A633009005DD /* KSVideoListController.m in Sources */,
+				8849A7271F57A7F6009005DD /* UIView+KCExtension.m in Sources */,
+				8849A6D21F57A0E3009005DD /* KCRecorderItem.m in Sources */,
+				8849A7131F57A7F6009005DD /* NSArray+KCExtension.m in Sources */,
+				8849A71C1F57A7F6009005DD /* CADisplayLink+KCExtension.m in Sources */,
+				8849A7231F57A7F6009005DD /* UINavigationBar+KCExtension.m in Sources */,
+				8849A71B1F57A7F6009005DD /* NSTimer+KCExtension.m in Sources */,
+				8849A7141F57A7F6009005DD /* NSAttributedString+KCExtension.m in Sources */,
+				8849A6C81F566FC6009005DD /* KSPlayerView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,8 +870,10 @@
 		};
 		882B4FDB1F56533C0097F20D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9A9A32365BEC4AFA6A8649B6 /* Pods-KCRecorder.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 9W8KXJ7KY8;
 				INFOPLIST_FILE = KCRecorder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = iMac.KCRecorder;
@@ -435,8 +883,10 @@
 		};
 		882B4FDC1F56533C0097F20D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4F9DF653D7383F42809F1E9E /* Pods-KCRecorder.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 9W8KXJ7KY8;
 				INFOPLIST_FILE = KCRecorder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = iMac.KCRecorder;
@@ -446,6 +896,7 @@
 		};
 		882B4FDE1F56533C0097F20D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 96753B1C9F1D2534EF70414A /* Pods-KCRecorderTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = KCRecorderTests/Info.plist;
@@ -458,6 +909,7 @@
 		};
 		882B4FDF1F56533C0097F20D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AFA64D07D0774444AEE13C9E /* Pods-KCRecorderTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = KCRecorderTests/Info.plist;
@@ -470,6 +922,7 @@
 		};
 		882B4FE11F56533C0097F20D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B4551FCFCCB013CB3EB29414 /* Pods-KCRecorderUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = KCRecorderUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -481,6 +934,7 @@
 		};
 		882B4FE21F56533C0097F20D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CF3F127DF567F300B55E1974 /* Pods-KCRecorderUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = KCRecorderUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -509,6 +963,7 @@
 				882B4FDC1F56533C0097F20D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		882B4FDD1F56533C0097F20D /* Build configuration list for PBXNativeTarget "KCRecorderTests" */ = {
 			isa = XCConfigurationList;
@@ -517,6 +972,7 @@
 				882B4FDF1F56533C0097F20D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		882B4FE01F56533C0097F20D /* Build configuration list for PBXNativeTarget "KCRecorderUITests" */ = {
 			isa = XCConfigurationList;
@@ -525,6 +981,7 @@
 				882B4FE21F56533C0097F20D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
