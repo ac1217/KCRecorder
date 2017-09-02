@@ -26,8 +26,6 @@
         __weak typeof(self) weakSelf = self;
         _recorder.dataSource = self;
         _recorder.timeInterval = 0.1;
-        _recorder.fileType = AVFileTypeMPEG4;
-        _recorder.track = KCRecorderTrackBoth;
         _recorder.view.frame = self.view.bounds;
         [_recorder setFilter:self.recorder.beautifyFilter];
         _recorder.currentTimeBlock = ^(KCRecorder *recorder, NSTimeInterval currentTime) {
@@ -105,6 +103,7 @@
 
 - (NSURL *)accompanyAudioURLWithRecorder:(KCRecorder *)recorder
 {
+//    return nil;
     return [[NSBundle mainBundle] URLForResource:@"abc" withExtension:@"m4a"];
 }
 

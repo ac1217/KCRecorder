@@ -17,11 +17,6 @@ typedef enum : NSUInteger {
     KCRecorderStatusPaused
 } KCRecorderStatus;
 
-typedef enum : NSUInteger {
-    KCRecorderTrackBoth,
-    KCRecorderTrackAudio,
-    KCRecorderTrackVideo
-} KCRecorderTrack;
 
 @class KCRecorder;
 
@@ -29,11 +24,17 @@ typedef enum : NSUInteger {
 
 - (NSURL *)recorder:(KCRecorder *)recorder destinationURLWithCurrentTime:(NSTimeInterval)currentTime;
 
-@optional
+@optional // 背景音乐相关
 - (NSTimeInterval)durationWithRecorder:(KCRecorder *)recorder;
 - (NSURL *)accompanyAudioURLWithRecorder:(KCRecorder *)recorder;
 - (NSTimeInterval)accompanyAudioStartTimeWithRecorder:(KCRecorder *)recorder;
 - (float)accompanyAudioRateWithRecorder:(KCRecorder *)recorder;
+
+@end
+
+@protocol KCRecorderDelegate <NSObject>
+
+@optional
 
 @end
 
@@ -44,12 +45,12 @@ typedef enum : NSUInteger {
 @property (nonatomic,strong, readonly) NSMutableArray <KCRecorderItem *>*items;
 
 @property (nonatomic,weak) id<KCRecorderDataSource> dataSource;
+@property (nonatomic,weak) id<KCRecorderDelegate> delegate;
 
 @property (nonatomic,assign, readonly) KCRecorderStatus status;
 
-@property (nonatomic,assign) KCRecorderTrack track;
 
-@property (nonatomic,copy) void(^recordStatusBlock)(KCRecorder *recorder, KCRecorderStatus status);
+@property (nonatomic,copy) void(^statusBlock)(KCRecorder *recorder, KCRecorderStatus status);
 
 @property (nonatomic,assign, readonly) NSTimeInterval duration;
 @property (nonatomic,assign) NSTimeInterval timeInterval;
@@ -65,16 +66,16 @@ typedef enum : NSUInteger {
 @property (nonatomic,strong, readonly) GPUImageFilterGroup *beautifyFilter;
 // 空滤镜
 @property (nonatomic,strong, readonly) GPUImageFilter *emptyFilter;
-@property(nonatomic) AVCaptureTorchMode torchMode;
+- (void)setFilter:(GPUImageOutput *)filter;
 
-- (void)switchTorch;
 
-- (void)removeItemAtIndex:(NSInteger)index;
-- (void)removeLastItem;
+- (KCRecorderItem *)removeItemAtIndex:(NSInteger)index;
+- (KCRecorderItem *)removeLastItem;
 
 
 @property (nonatomic,copy) NSString *sessionPreset;
 @property (nonatomic,assign) AVCaptureDevicePosition cameraPosition;
+@property(nonatomic) AVCaptureTorchMode torchMode;
 
 @property(nonatomic) CGPoint focusPointOfInterest;
 @property(nonatomic) AVCaptureFocusMode focusMode;
@@ -82,15 +83,17 @@ typedef enum : NSUInteger {
 @property (nonatomic,assign) CGSize videoSize;
 @property (nonatomic,copy) NSString *fileType;
 
+- (void)switchTorch;
+- (void)switchCamera;
 
 
-- (void)prepare;
+- (void)prepare; // default font camera
+- (void)prepareWithCameraPosition:(AVCaptureDevicePosition)cameraPosition;
 - (void)destory;
 
 - (void)beginPreview;
 - (void)endPreview;
 
-- (void)setFilter:(GPUImageOutput *)filter;
 
 - (void)start;
 - (void)resume;
@@ -98,8 +101,6 @@ typedef enum : NSUInteger {
 - (void)stop;
 - (void)cancel;
 
-- (void)switchToCameraPosition:(AVCaptureDevicePosition)position;
-- (void)switchCamera;
 
 @property (nonatomic,strong, readonly) KCRecorderView *view;
 

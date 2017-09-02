@@ -47,7 +47,7 @@
     
     KCRecorderItem *item = self.items[indexPath.row];
     
-    cell.imageView.image = [UIImage kc_imageWithVideoURL:item.URL atTime:0];
+    cell.imageView.image = item.firstFrameImage;
     cell.textLabel.text = item.URL.pathExtension;
     cell.detailTextLabel.text = [NSString stringWithFormat:@"%.2fs----size=%.1fM", item.duration, item.size / 1000.0 / 1000];
     // Configure the cell...

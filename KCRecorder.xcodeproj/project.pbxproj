@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07E13E301F5960A800F35CFF /* KCRecorderEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 07E13E2F1F5960A800F35CFF /* KCRecorderEditor.m */; };
 		882B4FB21F56533B0097F20D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 882B4FB11F56533B0097F20D /* main.m */; };
 		882B4FB51F56533B0097F20D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 882B4FB41F56533B0097F20D /* AppDelegate.m */; };
 		882B4FB81F56533B0097F20D /* KCRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 882B4FB71F56533B0097F20D /* KCRecordViewController.m */; };
@@ -72,6 +73,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		07E13E2E1F5960A800F35CFF /* KCRecorderEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KCRecorderEditor.h; sourceTree = "<group>"; };
+		07E13E2F1F5960A800F35CFF /* KCRecorderEditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KCRecorderEditor.m; sourceTree = "<group>"; };
 		4F9DF653D7383F42809F1E9E /* Pods-KCRecorder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KCRecorder.release.xcconfig"; path = "Pods/Target Support Files/Pods-KCRecorder/Pods-KCRecorder.release.xcconfig"; sourceTree = "<group>"; };
 		5CE02637CC3B072474767EAB /* libPods-KCRecorder.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KCRecorder.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FB7528DE3AC4C034E9640A0 /* libPods-KCRecorderTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KCRecorderTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -257,6 +260,8 @@
 				8849A6D11F57A0E3009005DD /* KCRecorderItem.m */,
 				8849A72C1F57AABA009005DD /* KCRecorderView.h */,
 				8849A72D1F57AABA009005DD /* KCRecorderView.m */,
+				07E13E2E1F5960A800F35CFF /* KCRecorderEditor.h */,
+				07E13E2F1F5960A800F35CFF /* KCRecorderEditor.m */,
 			);
 			path = KCRecorder;
 			sourceTree = "<group>";
@@ -484,7 +489,7 @@
 				TargetAttributes = {
 					882B4FAC1F56533B0097F20D = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 9W8KXJ7KY8;
+						DevelopmentTeam = 2Y52UEM99S;
 						ProvisioningStyle = Automatic;
 					};
 					882B4FC51F56533B0097F20D = {
@@ -725,6 +730,7 @@
 				8849A7231F57A7F6009005DD /* UINavigationBar+KCExtension.m in Sources */,
 				8849A71B1F57A7F6009005DD /* NSTimer+KCExtension.m in Sources */,
 				8849A7141F57A7F6009005DD /* NSAttributedString+KCExtension.m in Sources */,
+				07E13E301F5960A800F35CFF /* KCRecorderEditor.m in Sources */,
 				8849A6C81F566FC6009005DD /* KSPlayerView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -877,7 +883,7 @@
 			baseConfigurationReference = 9A9A32365BEC4AFA6A8649B6 /* Pods-KCRecorder.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 9W8KXJ7KY8;
+				DEVELOPMENT_TEAM = 2Y52UEM99S;
 				INFOPLIST_FILE = KCRecorder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = iMac.KCRecorder;
@@ -890,7 +896,7 @@
 			baseConfigurationReference = 4F9DF653D7383F42809F1E9E /* Pods-KCRecorder.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 9W8KXJ7KY8;
+				DEVELOPMENT_TEAM = 2Y52UEM99S;
 				INFOPLIST_FILE = KCRecorder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = iMac.KCRecorder;

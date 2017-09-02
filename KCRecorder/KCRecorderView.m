@@ -13,18 +13,18 @@
  - (void)setRecorderLayer:(UIView *)recorderLayer
  {
  
- [_recorderLayer removeFromSuperview];
- _recorderLayer = recorderLayer;
- [self addSubview:recorderLayer];
- [self setNeedsLayout];
+     [_recorderLayer removeFromSuperview];
+     _recorderLayer = recorderLayer;
+     [self addSubview:recorderLayer];
+     [self setNeedsLayout];
  
  }
  
  - (void)layoutSubviews
  {
- [super layoutSubviews];
- 
- self.recorderLayer.frame = self.layer.bounds;
+     [super layoutSubviews];
+     
+     self.recorderLayer.frame = self.layer.bounds;
  }
 
 @end
