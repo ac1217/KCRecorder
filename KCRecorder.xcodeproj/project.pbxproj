@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		07E13E301F5960A800F35CFF /* KCRecorderEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 07E13E2F1F5960A800F35CFF /* KCRecorderEditor.m */; };
 		882B4FB21F56533B0097F20D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 882B4FB11F56533B0097F20D /* main.m */; };
 		882B4FB51F56533B0097F20D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 882B4FB41F56533B0097F20D /* AppDelegate.m */; };
 		882B4FB81F56533B0097F20D /* KCRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 882B4FB71F56533B0097F20D /* KCRecordViewController.m */; };
@@ -16,11 +15,9 @@
 		882B4FC01F56533B0097F20D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 882B4FBE1F56533B0097F20D /* LaunchScreen.storyboard */; };
 		882B4FCB1F56533C0097F20D /* KCRecorderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 882B4FCA1F56533C0097F20D /* KCRecorderTests.m */; };
 		882B4FD61F56533C0097F20D /* KCRecorderUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 882B4FD51F56533C0097F20D /* KCRecorderUITests.m */; };
-		882B4FE81F5653A50097F20D /* KCRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 882B4FE71F5653A50097F20D /* KCRecorder.m */; };
 		882B4FF11F566E060097F20D /* KCVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 882B4FF01F566E060097F20D /* KCVideoViewController.m */; };
 		8849A6C71F566FC6009005DD /* KSPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8849A6C41F566FC6009005DD /* KSPlayer.m */; };
 		8849A6C81F566FC6009005DD /* KSPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8849A6C61F566FC6009005DD /* KSPlayerView.m */; };
-		8849A6D21F57A0E3009005DD /* KCRecorderItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 8849A6D11F57A0E3009005DD /* KCRecorderItem.m */; };
 		8849A6D51F57A5BA009005DD /* KSProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8849A6D41F57A5BA009005DD /* KSProgressView.m */; };
 		8849A6D81F57A633009005DD /* KSVideoListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8849A6D71F57A633009005DD /* KSVideoListController.m */; };
 		8849A7131F57A7F6009005DD /* NSArray+KCExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 8849A6DD1F57A7F6009005DD /* NSArray+KCExtension.m */; };
@@ -48,8 +45,11 @@
 		8849A7291F57A7F6009005DD /* UIVisualEffectView+KCExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 8849A70B1F57A7F6009005DD /* UIVisualEffectView+KCExtension.m */; };
 		8849A72A1F57A7F6009005DD /* KCConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 8849A70F1F57A7F6009005DD /* KCConst.m */; };
 		8849A72B1F57A7F6009005DD /* KCFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = 8849A7111F57A7F6009005DD /* KCFunction.m */; };
-		8849A72E1F57AABA009005DD /* KCRecorderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8849A72D1F57AABA009005DD /* KCRecorderView.m */; };
 		8849A7301F57DF98009005DD /* abc.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 8849A72F1F57DF98009005DD /* abc.m4a */; };
+		8849A73A1F5CEF86009005DD /* KCRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 8849A7331F5CEF86009005DD /* KCRecorder.m */; };
+		8849A73B1F5CEF86009005DD /* KCRecorderEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 8849A7351F5CEF86009005DD /* KCRecorderEditor.m */; };
+		8849A73C1F5CEF86009005DD /* KCRecorderItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 8849A7371F5CEF86009005DD /* KCRecorderItem.m */; };
+		8849A73D1F5CEF86009005DD /* KCRecorderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8849A7391F5CEF86009005DD /* KCRecorderView.m */; };
 		BD14ADAE2E35C9238886BA1A /* libPods-KCRecorderUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C7A73FAC83D85242B0267774 /* libPods-KCRecorderUITests.a */; };
 		F0439A4018487A5509648712 /* libPods-KCRecorderTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FB7528DE3AC4C034E9640A0 /* libPods-KCRecorderTests.a */; };
 		F36CD02B65968FE44B7293AB /* libPods-KCRecorder.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CE02637CC3B072474767EAB /* libPods-KCRecorder.a */; };
@@ -73,8 +73,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		07E13E2E1F5960A800F35CFF /* KCRecorderEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KCRecorderEditor.h; sourceTree = "<group>"; };
-		07E13E2F1F5960A800F35CFF /* KCRecorderEditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KCRecorderEditor.m; sourceTree = "<group>"; };
 		4F9DF653D7383F42809F1E9E /* Pods-KCRecorder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KCRecorder.release.xcconfig"; path = "Pods/Target Support Files/Pods-KCRecorder/Pods-KCRecorder.release.xcconfig"; sourceTree = "<group>"; };
 		5CE02637CC3B072474767EAB /* libPods-KCRecorder.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KCRecorder.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FB7528DE3AC4C034E9640A0 /* libPods-KCRecorderTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KCRecorderTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -94,16 +92,12 @@
 		882B4FD11F56533C0097F20D /* KCRecorderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KCRecorderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		882B4FD51F56533C0097F20D /* KCRecorderUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KCRecorderUITests.m; sourceTree = "<group>"; };
 		882B4FD71F56533C0097F20D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		882B4FE61F5653A50097F20D /* KCRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KCRecorder.h; sourceTree = "<group>"; };
-		882B4FE71F5653A50097F20D /* KCRecorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KCRecorder.m; sourceTree = "<group>"; };
 		882B4FEF1F566E060097F20D /* KCVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KCVideoViewController.h; sourceTree = "<group>"; };
 		882B4FF01F566E060097F20D /* KCVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KCVideoViewController.m; sourceTree = "<group>"; };
 		8849A6C31F566FC6009005DD /* KSPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSPlayer.h; sourceTree = "<group>"; };
 		8849A6C41F566FC6009005DD /* KSPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSPlayer.m; sourceTree = "<group>"; };
 		8849A6C51F566FC6009005DD /* KSPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSPlayerView.h; sourceTree = "<group>"; };
 		8849A6C61F566FC6009005DD /* KSPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSPlayerView.m; sourceTree = "<group>"; };
-		8849A6D01F57A0E3009005DD /* KCRecorderItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KCRecorderItem.h; sourceTree = "<group>"; };
-		8849A6D11F57A0E3009005DD /* KCRecorderItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KCRecorderItem.m; sourceTree = "<group>"; };
 		8849A6D31F57A5BA009005DD /* KSProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSProgressView.h; sourceTree = "<group>"; };
 		8849A6D41F57A5BA009005DD /* KSProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSProgressView.m; sourceTree = "<group>"; };
 		8849A6D61F57A633009005DD /* KSVideoListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSVideoListController.h; sourceTree = "<group>"; };
@@ -160,9 +154,15 @@
 		8849A7101F57A7F6009005DD /* KCFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KCFunction.h; sourceTree = "<group>"; };
 		8849A7111F57A7F6009005DD /* KCFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KCFunction.m; sourceTree = "<group>"; };
 		8849A7121F57A7F6009005DD /* KCMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KCMacro.h; sourceTree = "<group>"; };
-		8849A72C1F57AABA009005DD /* KCRecorderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KCRecorderView.h; sourceTree = "<group>"; };
-		8849A72D1F57AABA009005DD /* KCRecorderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KCRecorderView.m; sourceTree = "<group>"; };
 		8849A72F1F57DF98009005DD /* abc.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = abc.m4a; sourceTree = "<group>"; };
+		8849A7321F5CEF86009005DD /* KCRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KCRecorder.h; sourceTree = "<group>"; };
+		8849A7331F5CEF86009005DD /* KCRecorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KCRecorder.m; sourceTree = "<group>"; };
+		8849A7341F5CEF86009005DD /* KCRecorderEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KCRecorderEditor.h; sourceTree = "<group>"; };
+		8849A7351F5CEF86009005DD /* KCRecorderEditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KCRecorderEditor.m; sourceTree = "<group>"; };
+		8849A7361F5CEF86009005DD /* KCRecorderItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KCRecorderItem.h; sourceTree = "<group>"; };
+		8849A7371F5CEF86009005DD /* KCRecorderItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KCRecorderItem.m; sourceTree = "<group>"; };
+		8849A7381F5CEF86009005DD /* KCRecorderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KCRecorderView.h; sourceTree = "<group>"; };
+		8849A7391F5CEF86009005DD /* KCRecorderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KCRecorderView.m; sourceTree = "<group>"; };
 		96753B1C9F1D2534EF70414A /* Pods-KCRecorderTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KCRecorderTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KCRecorderTests/Pods-KCRecorderTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9A9A32365BEC4AFA6A8649B6 /* Pods-KCRecorder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KCRecorder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KCRecorder/Pods-KCRecorder.debug.xcconfig"; sourceTree = "<group>"; };
 		AFA64D07D0774444AEE13C9E /* Pods-KCRecorderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KCRecorderTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-KCRecorderTests/Pods-KCRecorderTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -253,15 +253,8 @@
 				882B4FBC1F56533B0097F20D /* Assets.xcassets */,
 				882B4FBE1F56533B0097F20D /* LaunchScreen.storyboard */,
 				882B4FC11F56533B0097F20D /* Info.plist */,
+				8849A7311F5CEF86009005DD /* KCRecorder */,
 				882B4FB01F56533B0097F20D /* Supporting Files */,
-				882B4FE61F5653A50097F20D /* KCRecorder.h */,
-				882B4FE71F5653A50097F20D /* KCRecorder.m */,
-				8849A6D01F57A0E3009005DD /* KCRecorderItem.h */,
-				8849A6D11F57A0E3009005DD /* KCRecorderItem.m */,
-				8849A72C1F57AABA009005DD /* KCRecorderView.h */,
-				8849A72D1F57AABA009005DD /* KCRecorderView.m */,
-				07E13E2E1F5960A800F35CFF /* KCRecorderEditor.h */,
-				07E13E2F1F5960A800F35CFF /* KCRecorderEditor.m */,
 			);
 			path = KCRecorder;
 			sourceTree = "<group>";
@@ -403,6 +396,21 @@
 			path = Macro;
 			sourceTree = "<group>";
 		};
+		8849A7311F5CEF86009005DD /* KCRecorder */ = {
+			isa = PBXGroup;
+			children = (
+				8849A7321F5CEF86009005DD /* KCRecorder.h */,
+				8849A7331F5CEF86009005DD /* KCRecorder.m */,
+				8849A7341F5CEF86009005DD /* KCRecorderEditor.h */,
+				8849A7351F5CEF86009005DD /* KCRecorderEditor.m */,
+				8849A7361F5CEF86009005DD /* KCRecorderItem.h */,
+				8849A7371F5CEF86009005DD /* KCRecorderItem.m */,
+				8849A7381F5CEF86009005DD /* KCRecorderView.h */,
+				8849A7391F5CEF86009005DD /* KCRecorderView.m */,
+			);
+			path = KCRecorder;
+			sourceTree = "<group>";
+		};
 		F84C66337B2B226F949DA16C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -489,7 +497,7 @@
 				TargetAttributes = {
 					882B4FAC1F56533B0097F20D = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 2Y52UEM99S;
+						DevelopmentTeam = 9W8KXJ7KY8;
 						ProvisioningStyle = Automatic;
 					};
 					882B4FC51F56533B0097F20D = {
@@ -697,6 +705,7 @@
 			files = (
 				8849A6D51F57A5BA009005DD /* KSProgressView.m in Sources */,
 				8849A71A1F57A7F6009005DD /* NSString+KCExtension.m in Sources */,
+				8849A73C1F5CEF86009005DD /* KCRecorderItem.m in Sources */,
 				8849A6C71F566FC6009005DD /* KSPlayer.m in Sources */,
 				8849A71F1F57A7F6009005DD /* UIColor+KCExtension.m in Sources */,
 				8849A71E1F57A7F6009005DD /* UIButton+KCExtension.m in Sources */,
@@ -705,6 +714,7 @@
 				882B4FB51F56533B0097F20D /* AppDelegate.m in Sources */,
 				882B4FB21F56533B0097F20D /* main.m in Sources */,
 				8849A7191F57A7F6009005DD /* NSMutableDictionary+KCExtension.m in Sources */,
+				8849A73B1F5CEF86009005DD /* KCRecorderEditor.m in Sources */,
 				8849A71D1F57A7F6009005DD /* CALayer+KCExtension.m in Sources */,
 				8849A7261F57A7F6009005DD /* UITextView+KCExtension.m in Sources */,
 				8849A7281F57A7F6009005DD /* UIViewController+KCExtension.m in Sources */,
@@ -716,21 +726,19 @@
 				8849A7171F57A7F6009005DD /* NSDictionary+KCExtension.m in Sources */,
 				8849A7211F57A7F6009005DD /* UIImage+KCExtension.m in Sources */,
 				8849A7181F57A7F6009005DD /* NSMutableArray+KCExtension.m in Sources */,
+				8849A73A1F5CEF86009005DD /* KCRecorder.m in Sources */,
 				8849A7201F57A7F6009005DD /* UIDevice+KCExtension.m in Sources */,
-				8849A72E1F57AABA009005DD /* KCRecorderView.m in Sources */,
 				8849A7151F57A7F6009005DD /* NSData+KCExtension.m in Sources */,
-				882B4FE81F5653A50097F20D /* KCRecorder.m in Sources */,
 				8849A7161F57A7F6009005DD /* NSDate+KCExtension.m in Sources */,
 				8849A7221F57A7F6009005DD /* UIImageView+KCExtension.m in Sources */,
 				8849A6D81F57A633009005DD /* KSVideoListController.m in Sources */,
 				8849A7271F57A7F6009005DD /* UIView+KCExtension.m in Sources */,
-				8849A6D21F57A0E3009005DD /* KCRecorderItem.m in Sources */,
 				8849A7131F57A7F6009005DD /* NSArray+KCExtension.m in Sources */,
+				8849A73D1F5CEF86009005DD /* KCRecorderView.m in Sources */,
 				8849A71C1F57A7F6009005DD /* CADisplayLink+KCExtension.m in Sources */,
 				8849A7231F57A7F6009005DD /* UINavigationBar+KCExtension.m in Sources */,
 				8849A71B1F57A7F6009005DD /* NSTimer+KCExtension.m in Sources */,
 				8849A7141F57A7F6009005DD /* NSAttributedString+KCExtension.m in Sources */,
-				07E13E301F5960A800F35CFF /* KCRecorderEditor.m in Sources */,
 				8849A6C81F566FC6009005DD /* KSPlayerView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -883,7 +891,7 @@
 			baseConfigurationReference = 9A9A32365BEC4AFA6A8649B6 /* Pods-KCRecorder.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 2Y52UEM99S;
+				DEVELOPMENT_TEAM = 9W8KXJ7KY8;
 				INFOPLIST_FILE = KCRecorder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = iMac.KCRecorder;
@@ -896,7 +904,7 @@
 			baseConfigurationReference = 4F9DF653D7383F42809F1E9E /* Pods-KCRecorder.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 2Y52UEM99S;
+				DEVELOPMENT_TEAM = 9W8KXJ7KY8;
 				INFOPLIST_FILE = KCRecorder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = iMac.KCRecorder;

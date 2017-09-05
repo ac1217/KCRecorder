@@ -13,11 +13,15 @@
 @property (nonatomic,strong) NSURL *URL;
 
 
-//@property (nonatomic,assign) NSTimeInterval startTime;
-@property (nonatomic,assign) NSTimeInterval duration;
+@property (nonatomic,assign) NSTimeInterval startTime;
+@property (nonatomic,assign) NSTimeInterval endTime;
+
+
+@property (nonatomic,assign, readonly) NSTimeInterval duration;
 
 @property (nonatomic,assign, readonly) NSInteger size;
 
+@property (nonatomic,assign) float rate;
 
 @property (nonatomic,strong, readonly) UIImage *firstFrameImage;
 
@@ -27,8 +31,8 @@
 
 @property (nonatomic,strong) NSURL *accompanyAudioURL;
 @property (nonatomic,assign) NSTimeInterval accompanyAudioStartTime;
-//@property (nonatomic,assign) NSTimeInterval accompanyAudioDuration;
-@property (nonatomic,assign) float accompanyAudioRate;
+@property (nonatomic,assign) NSTimeInterval accompanyAudioEndTime;
+@property (nonatomic,assign, readonly) NSTimeInterval accompanyAudioDuration;
 
 - (void)finish:(void(^)())completion;
 

@@ -16,6 +16,16 @@
 
 @implementation KCRecorderItem
 
+- (NSTimeInterval)duration
+{
+    return (self.endTime - self.startTime);
+}
+
+- (NSTimeInterval)accompanyAudioDuration
+{
+    return self.accompanyAudioEndTime - self.accompanyAudioStartTime;
+}
+
 - (instancetype)initWithURL:(NSURL *)url
 {
     if (self = [super init]) {
@@ -49,8 +59,8 @@
     option.videoURL = self.URL;
     option.audioURL = self.accompanyAudioURL;
     option.audioStartTime = self.accompanyAudioStartTime;
-    option.audioDuration = self.duration * self.accompanyAudioRate;
-    option.audioRate = self.accompanyAudioRate;
+    option.audioDuration = self.accompanyAudioDuration;
+    option.videoRate = self.rate;
     option.videoDuration = self.duration;
     option.containVoice = self.isContainVoice;
     option.outputURL = self.URL;

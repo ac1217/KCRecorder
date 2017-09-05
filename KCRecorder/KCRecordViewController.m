@@ -28,21 +28,21 @@
         _recorder.timeInterval = 0.1;
         _recorder.view.frame = self.view.bounds;
         [_recorder setFilter:self.recorder.beautifyFilter];
-        _recorder.currentTimeBlock = ^(KCRecorder *recorder, NSTimeInterval currentTime) {
-            
-            [weakSelf.progressView setProgress:currentTime / recorder.duration animated:YES];
-            
-        };
-        
-        _recorder.finishBlock = ^(KCRecorder *recorder) {
-            
-            [weakSelf.progressView markAtCurrentProgress];
-            
-        };
-        
-        _recorder.completionBlock = ^(KCRecorder *recorder) {
-            [weakSelf push:nil];
-        };
+//        _recorder.currentTimeBlock = ^(KCRecorder *recorder, NSTimeInterval currentTime) {
+//            
+//            [weakSelf.progressView setProgress:currentTime / recorder.duration animated:YES];
+//            
+//        };
+//        
+//        _recorder.finishBlock = ^(KCRecorder *recorder) {
+//            
+//            [weakSelf.progressView markAtCurrentProgress];
+//            
+//        };
+//        
+//        _recorder.completionBlock = ^(KCRecorder *recorder) {
+//            [weakSelf push:nil];
+//        };
     }
     return _recorder;
 }
@@ -91,17 +91,17 @@
 
 #pragma mark -KCRecorderDataSource
 
-- (float)accompanyAudioRateWithRecorder:(KCRecorder *)recorder
+- (BOOL)recorder:(KCRecorder *)recorder shouldContainVoiceForItem:(KCRecorderItem *)item
 {
-    return 1;
+    return NO;
 }
 
-- (NSTimeInterval)accompanyAudioStartTimeWithRecorder:(KCRecorder *)recorder
+- (NSTimeInterval)recorder:(KCRecorder *)recorder accompanyAudioStartTimeForItem:(KCRecorderItem *)item
 {
     return 47;
 }
 
-- (NSURL *)accompanyAudioURLWithRecorder:(KCRecorder *)recorder
+- (NSURL *)recorder:(KCRecorder *)recorder accompanyAudioURLForItem:(KCRecorderItem *)item
 {
 //    return nil;
     return [[NSBundle mainBundle] URLForResource:@"abc" withExtension:@"m4a"];
