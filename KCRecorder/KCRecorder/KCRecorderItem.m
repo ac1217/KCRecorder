@@ -18,7 +18,7 @@
 
 - (NSTimeInterval)duration
 {
-    return (self.endTime - self.startTime);
+    return (self.endTime - self.startTime) * self.rate;
 }
 
 - (NSTimeInterval)accompanyAudioDuration
@@ -31,6 +31,7 @@
     if (self = [super init]) {
         _URL = url;
         _containVoice = NO;
+        _rate = 1;
     }
     return self;
 }
@@ -43,7 +44,22 @@
 
 - (UIImage *)firstFrameImage
 {
-    return [KCRecorderEditor imageWithVideoURL:self.URL atTime:0];
+    AVURLAsset *asset = [AVURLAsset assetWithURL:self.URL];
+    
+    AVAssetImageGenerator *generator = [[AVAssetImageGenerator alloc] initWithAsset:asset];
+    generator.apertureMode = AVAssetImageGeneratorApertureModeEncodedPixels;
+    generator.appliesPreferredTrackTransform = YES;
+    
+    generator.requestedTimeToleranceBefore = kCMTimeZero;
+    generator.requestedTimeToleranceAfter = kCMTimeZero;
+    
+    
+    CMTime actualTime;
+    
+    CGImageRef cgImage = [generator copyCGImageAtTime:CMTimeMake(0 * asset.duration.timescale, asset.duration.timescale) actualTime:&actualTime error:nil];
+    
+    return [UIImage imageWithCGImage:cgImage];
+    
 }
 
 
@@ -51,25 +67,27 @@
 {
     
     if (!self.accompanyAudioURL) {
+    
         !completion ? : completion();
+        
         return;
     }
+
     
-    KCRecorderEditorCombineOption *option = [KCRecorderEditorCombineOption new];
+    KCRecorderEditorOption *option = [KCRecorderEditorOption new];
     option.videoURL = self.URL;
     option.audioURL = self.accompanyAudioURL;
     option.audioStartTime = self.accompanyAudioStartTime;
     option.audioDuration = self.accompanyAudioDuration;
     option.videoRate = self.rate;
+    option.videoStartTime = 0;
     option.videoDuration = self.duration;
     option.containVoice = self.isContainVoice;
     option.outputURL = self.URL;
     
     [KCRecorderEditor combineWithOption:option completion:^(NSURL *outputURL, BOOL success, AVAssetExportSessionStatus status) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            
-            !completion ? : completion();
-        });
+        
+        !completion ? : completion();
     }];
 
     

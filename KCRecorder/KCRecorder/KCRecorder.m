@@ -12,17 +12,20 @@
 @interface KCRecorder ()<GPUImageVideoCameraDelegate>{
     KCRecorderView *_view;
     GPUImageView *_gpuView;
-    GPUImageOutput *_filter;
     KCRecorderStatus _status;
     GPUImageFilterGroup *_beautifyFilter;
     GPUImageFilter *_emptyFilter;
     NSMutableArray *_items;
     BOOL _isPrepare;
+    
 }
 
-@property (nonatomic,strong) GPUImageVideoCamera *camera;
+@property (nonatomic,strong) GPUImageStillCamera *camera;
 
 @property (nonatomic,strong) GPUImageMovieWriter *writer;
+
+//@property (nonatomic,strong) AVAssetReader *reader;
+//@property (nonatomic,strong) AVAssetReaderOutput *readerOutput;
 
 @property (nonatomic,strong) NSTimer *timer;
 
@@ -32,10 +35,12 @@
 
 @implementation KCRecorder
 
+#pragma mark -Setter
+
 #pragma mark -Getter
-- (NSTimeInterval)accompanyAudioCurrentTime
+- (KCRecorderItem *)currentItem
 {
-    return _player.currentTime;
+    return self.items.lastObject;
 }
 
 
@@ -45,26 +50,26 @@
 {
     
     if ([_dataSource respondsToSelector:@selector(recorder:shouldPlayAudioWhenReocrdingForItem:)]) {
-        return [_dataSource recorder:self shouldPlayAudioWhenReocrdingForItem:_items.lastObject];
+        return [_dataSource recorder:self shouldPlayAudioWhenReocrdingForItem:self.currentItem];
     }
     
     return YES;
 }
 
-- (BOOL)shouldContainVoice
-{
-    
-    if ([_dataSource respondsToSelector:@selector(recorder:shouldContainVoiceForItem:)]) {
-        return [_dataSource recorder:self shouldContainVoiceForItem:_items.lastObject];
-    }
-    return YES;
-}
+//- (BOOL)shouldContainVoice
+//{
+//    
+//    if ([_dataSource respondsToSelector:@selector(recorder:shouldContainVoiceForItem:)]) {
+//        return [_dataSource recorder:self shouldContainVoiceForItem:self.currentItem];
+//    }
+//    return YES;
+//}
 
 - (float)rate
 {
     
     if ([_dataSource respondsToSelector:@selector(recorder:rateForItem:)]) {
-        return [_dataSource recorder:self rateForItem:_items.lastObject];
+        return [_dataSource recorder:self rateForItem:self.currentItem];
     }
     return 1;
 }
@@ -81,7 +86,7 @@
 - (NSTimeInterval)accompanyAudioStartTime
 {
     if ([_dataSource respondsToSelector:@selector(recorder:accompanyAudioStartTimeForItem:)]) {
-        return [_dataSource recorder:self accompanyAudioStartTimeForItem:_items.lastObject];
+        return [_dataSource recorder:self accompanyAudioStartTimeForItem:self.currentItem];
     }
     return 0;
 }
@@ -91,42 +96,35 @@
     return [_dataSource recorder:self destinationURLWithCurrentTime:_currentTime];
 }
 
-- (NSTimeInterval)duration
-{
-    if ([_dataSource respondsToSelector:@selector(durationWithRecorder:)]) {
-        return [_dataSource durationWithRecorder:self];
-    }
-    return 0;
-}
-
 #pragma mark -Life Cycle
 - (void)dealloc
 {
-    [self destory];
-    [self removeTimer];
     
+    [self destory];
 }
 
 
 - (instancetype)init
 {
     if (self = [super init]) {
-        
+//        AVCaptureSessionPresetiFrame960x540
         _sessionPreset = AVCaptureSessionPresetHigh;
         _fileType = AVFileTypeMPEG4;
         _view = [KCRecorderView new];
         _items = @[].mutableCopy;
-        
         // 1、创建滤镜组
         _beautifyFilter = [[GPUImageFilterGroup alloc] init];
         
         // 2、创建滤镜（设置滤镜的引用关系）
         // 2-1、 初始化滤镜
         GPUImageBilateralFilter *bilateralFilter = [[GPUImageBilateralFilter alloc] init]; // 磨皮
+        bilateralFilter.distanceNormalizationFactor = 4;
         GPUImageExposureFilter *exposureFilter = [[GPUImageExposureFilter alloc] init]; // 曝光
+//        exposureFilter.exposure = 1;
         GPUImageBrightnessFilter *brightnessFilter = [[GPUImageBrightnessFilter alloc] init]; // 美白
-//        brightnessFilter.brightness = 0.5;
+        brightnessFilter.brightness = 0.1;
         GPUImageSaturationFilter *satureationFilter = [[GPUImageSaturationFilter alloc] init]; // 饱和
+        satureationFilter.saturation = 1.1;
         
         // 2-2、设置滤镜的引用关系
         [bilateralFilter addTarget:brightnessFilter];
@@ -134,11 +132,15 @@
         [exposureFilter addTarget:satureationFilter];
         
         // 3、设置滤镜组链的起点&&终点
+        [_beautifyFilter addFilter:bilateralFilter];
+        [_beautifyFilter addFilter:brightnessFilter];
+        [_beautifyFilter addFilter:exposureFilter];
         _beautifyFilter.initialFilters = @[bilateralFilter];
         _beautifyFilter.terminalFilter = satureationFilter;
         
         _emptyFilter = [[GPUImageFilter  alloc] init];
-        _filter = _emptyFilter;
+        
+        _filter = _beautifyFilter;
         
         _timeInterval = 1;
         
@@ -165,8 +167,8 @@
     
     [self resetCurrentTime];
     
-    if ([self.delegate respondsToSelector:@selector(recorder:didRemovedItem:atIndex:)]) {
-        [self.delegate recorder:self didRemovedItem:item atIndex:index];
+    if ([_delegate respondsToSelector:@selector(recorder:didRemovedItem:atIndex:)]) {
+        [_delegate recorder:self didRemovedItem:item atIndex:index];
     }
     
     return item;
@@ -262,6 +264,11 @@
     }
 }
 
+- (BOOL)isTorchSupport
+{
+    return self.cameraPosition == AVCaptureDevicePositionBack;
+}
+
 - (void)switchTorch
 {
     if([_camera.inputCamera lockForConfiguration:nil]) {
@@ -297,7 +304,7 @@
 }
 
 
-- (void)setFilter:(GPUImageOutput *)filter
+- (void)setFilter:(GPUImageOutput <GPUImageInput>*)filter
 {
     _filter = filter;
     
@@ -316,13 +323,13 @@
     
 }
 
-
 - (void)destory
 {
 //    _camera.inputCamera.torchMode
     [_camera stopCameraCapture];
     [_camera removeAllTargets];
     [_filter removeAllTargets];
+    
     _camera = nil;
     _filter = nil;
     _writer = nil;
@@ -330,41 +337,43 @@
     _player = nil;
     _view.recorderLayer = nil;
     _isPrepare = NO;
+//    _reader = nil;
+//    _readerOutput = nil;
+    [self removeTimer];
 }
 
 
 - (void)prepareWithCameraPosition:(AVCaptureDevicePosition)cameraPosition
 {
-    GPUImageVideoCamera *camera = [[GPUImageVideoCamera alloc] initWithSessionPreset:_sessionPreset cameraPosition:cameraPosition];
-    
+    GPUImageStillCamera *camera = [[GPUImageStillCamera alloc] initWithSessionPreset:_sessionPreset cameraPosition:cameraPosition];
+    camera.delegate = self;
     [camera.videoCaptureConnection setPreferredVideoStabilizationMode:AVCaptureVideoStabilizationModeCinematic];
+    
+//    camera.captureSessionPreset = AVCaptureSessionPreset640x480;
+    
     //输出图像旋转方式
     camera.outputImageOrientation = UIInterfaceOrientationPortrait;
     camera.horizontallyMirrorFrontFacingCamera = YES;
     [camera addAudioInputsAndOutputs];
     
-    GPUImageView *gpuView = [[GPUImageView alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    gpuView.fillMode = kGPUImageFillModePreserveAspectRatioAndFill;
-    gpuView.clipsToBounds = YES;
-    _gpuView = gpuView;
     
     dispatch_async(dispatch_get_main_queue(), ^{
+        
+        GPUImageView *gpuView = [[GPUImageView alloc] init];
+        gpuView.fillMode = 2;
+//        gpuView.fillMode = kGPUImageFillModePreserveAspectRatioAndFill;
+        gpuView.clipsToBounds = YES;
+        _gpuView = gpuView;
         _view.recorderLayer = gpuView;
+        [_filter addTarget:gpuView];
+        
     });
     
-    [_filter addTarget:gpuView];
+//    AVMediaType
     
     [camera addTarget:_filter];
     
     [camera startCameraCapture];
-    
-    if (self.accompanyAudioURL) {
-        _player = [[AVAudioPlayer alloc] initWithContentsOfURL:self.accompanyAudioURL error:nil];
-        _player.enableRate = YES;
-        [_player prepareToPlay];
-        _player.currentTime = self.accompanyAudioStartTime;
-        
-    }
     
     _camera = camera;
     
@@ -373,7 +382,7 @@
     if ([_delegate respondsToSelector:@selector(recorderDidPrepared:)]) {
         [_delegate recorderDidPrepared:self];
     }
-    
+   
 }
 
 - (void)prepare
@@ -391,28 +400,20 @@
     if (_status == KCRecorderStatusRecording) {
         return;
     }
+    KCRecorderItem *item = [[KCRecorderItem alloc] init];
+    [_items addObject:item];
     
-    if ([self.delegate respondsToSelector:@selector(recorderWillStart:)]) {
-        [self.delegate recorderWillStart:self];
+    if ([_delegate respondsToSelector:@selector(recorder:willStartForItem:)]) {
+        [_delegate recorder:self willStartForItem:self.currentItem];
     }
     
     NSURL *url = self.destinationURL;
-    
-    KCRecorderItem *item = [[KCRecorderItem alloc] initWithURL:url];
-    item.rate = self.rate;
-    item.accompanyAudioURL = self.accompanyAudioURL;
-    
-    KCRecorderItem *lastItem = _items.lastObject;
-    
-    if (lastItem) {
-        item.accompanyAudioStartTime = lastItem.accompanyAudioEndTime;
-    }else {
-        item.accompanyAudioStartTime = [self accompanyAudioStartTime];
-    }
-    
-    item.startTime = _currentTime;
-    
-    [_items addObject:item];
+    self.currentItem.containVoice = self.hasVoiceTrack;
+    self.currentItem.URL = url;
+    self.currentItem.rate = self.rate;
+    self.currentItem.accompanyAudioURL = self.accompanyAudioURL;
+    self.currentItem.startTime = _currentTime;
+    self.currentItem.accompanyAudioStartTime = [self accompanyAudioStartTime];
     
     unlink([url.path UTF8String]);
     
@@ -422,20 +423,20 @@
         size = CGSizeMake(_view.bounds.size.width, _view.bounds.size.height);
     }
     
-    /*
+    /**/
     NSDictionary *videoSetting = _videoSetting;
     
     if (!videoSetting) {
         //写入视频大小
         NSInteger numPixels = size.width * size.height;
         //每像素比特
-        CGFloat bitsPerPixel = 8;
+        CGFloat bitsPerPixel = 3;
         NSInteger bitsPerSecond = numPixels * bitsPerPixel;
         // 码率和帧率设置
         NSDictionary *compressionProperties = @{
                                                 AVVideoAverageBitRateKey : @(bitsPerSecond),
-                                                AVVideoExpectedSourceFrameRateKey : @(60),
-                                                AVVideoMaxKeyFrameIntervalKey : @(60),
+                                                AVVideoExpectedSourceFrameRateKey : @(20),
+                                                AVVideoMaxKeyFrameIntervalKey : @(20),
                                                 AVVideoProfileLevelKey : AVVideoProfileLevelH264BaselineAutoLevel
                                                 };
         
@@ -447,66 +448,111 @@
                           AVVideoHeightKey : @(size.height),
                           AVVideoCompressionPropertiesKey : compressionProperties
                           };
-    }*/
+    }
     
-    GPUImageMovieWriter *writer = [[GPUImageMovieWriter alloc] initWithMovieURL:url size:size fileType:_fileType outputSettings:_videoSetting];
+    GPUImageMovieWriter *writer = [[GPUImageMovieWriter alloc] initWithMovieURL:url size:size fileType:_fileType outputSettings:videoSetting];
     
     __weak typeof(self) weakSelf = self;
+    
     writer.completionBlock = ^{
         
-        item.endTime = _currentTime;
-        item.accompanyAudioEndTime = _player.currentTime;
-        
-        [item finish:^{
+        [weakSelf.currentItem finish:^{
             
-            if ([weakSelf.delegate respondsToSelector:@selector(recorder:didStoppedForItem:)]) {
-                [weakSelf.delegate recorder:weakSelf didStoppedForItem:item];
-            }
-            
-            if (weakSelf.duration && weakSelf.currentTime >= weakSelf.duration) {
+            dispatch_async(dispatch_get_main_queue(), ^{
                 
-                if ([weakSelf.delegate respondsToSelector:@selector(recorder:didCompletedForItems:)]) {
-                    [weakSelf.delegate recorder:weakSelf didCompletedForItems:weakSelf.items];
+                
+                
+                NSString *currentTimeStr = [NSString stringWithFormat:@"%f", weakSelf.currentTime];
+                NSString *durationStr = [NSString stringWithFormat:@"%f", weakSelf.duration];
+                
+                
+                // 这样比较才准确
+                if (weakSelf.duration && currentTimeStr.floatValue >= durationStr.floatValue) {
+                    
+                    if ([weakSelf.delegate respondsToSelector:@selector(recorder:didCompletedForItems:)]) {
+                        
+                        [weakSelf.delegate recorder:weakSelf didCompletedForItems:weakSelf.items];
+                    }
+                    
                 }
-                
-            }
+            });
+            
         }];
         
         
     };
     writer.failureBlock = ^(NSError *error) {
         
-        if ([weakSelf.delegate respondsToSelector:@selector(recorder:didFailedForItem:error:)]) {
-            [weakSelf.delegate recorder:weakSelf didFailedForItem:item error:error];
-        }
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if ([weakSelf.delegate respondsToSelector:@selector(recorder:didFailedForItem:error:)]) {
+                [weakSelf.delegate recorder:weakSelf didFailedForItem:weakSelf.currentItem error:error];
+            }
+        });
         
     };
     
     writer.encodingLiveVideo = YES;
     
-    if ([self shouldContainVoice]) {
-        writer.hasAudioTrack = YES;
-        _camera.audioEncodingTarget = writer;
-    }
+    [writer setHasAudioTrack:YES audioSettings:nil];
     
+//    if (self.hasVoiceTrack) {
+    _camera.audioEncodingTarget = writer;
+//    }
+
     [_filter addTarget:writer];
     [writer startRecording];
     _writer = writer;
     
-    if ([self shouldPlayAudioWhenReocrding]) {
+    if (self.accompanyAudioURL) {
+        /*
+        AVAsset *asset = [AVAsset assetWithURL:[self accompanyAudioURL]];
+        NSError *error = nil;
+        _reader = [AVAssetReader assetReaderWithAsset:asset error:&error];
         
-        _player.currentTime = item.accompanyAudioStartTime;
-        _player.rate = 1 / item.rate;
-        [_player play];
+        if (!error) {
+            
+            CMTime start = CMTimeMakeWithSeconds([self accompanyAudioStartTime], asset.duration.timescale);
+            CMTime dutation = CMTimeMakeWithSeconds(self.duration, asset.duration.timescale);
+            _reader.timeRange = CMTimeRangeMake(start, dutation);
+            
+            NSArray *audioTracks = [asset tracksWithMediaType:AVMediaTypeAudio];
+            AVAssetTrack *audioTrack = audioTracks.firstObject;
+            
+            NSDictionary *outputSetting = @{
+                                            AVSampleRateKey : @([[AVAudioSession sharedInstance] sampleRate]),
+                                            AVNumberOfChannelsKey: @1,
+                                            AVFormatIDKey : @(kAudioFormatLinearPCM)
+                                            };
+            
+            _readerOutput = [[AVAssetReaderTrackOutput alloc] initWithTrack:audioTrack outputSettings:outputSetting];
+            _readerOutput.supportsRandomAccess = YES;
+            if ([_reader canAddOutput:_readerOutput]) {
+                [_reader addOutput:_readerOutput];
+            }
+            [_reader startReading];
+            
+        }*/
+        
+        
+        if ([self shouldPlayAudioWhenReocrding]) {
+            
+            _player = [[AVAudioPlayer alloc] initWithContentsOfURL:self.accompanyAudioURL error:nil];
+            _player.enableRate = YES;
+            [_player play];
+            _player.currentTime = self.currentItem.accompanyAudioStartTime;
+            _player.rate = 1 / self.currentItem.rate;
+            
+        }
         
     }
+    
     
     _status = KCRecorderStatusRecording;
     [self statusDidChanged];
     [self addTimer];
     
     if ([_delegate respondsToSelector:@selector(recorder:didStartedForItem:)]) {
-        [_delegate recorder:self didStartedForItem:item];
+        [_delegate recorder:self didStartedForItem:self.currentItem];
     }
     
 }
@@ -517,26 +563,35 @@
         return;
     }
     
-    if ([self.delegate respondsToSelector:@selector(recorderWillStop:)]) {
-        [self.delegate recorderWillStop:self];
+    if ([_delegate respondsToSelector:@selector(recorder:willStopForItem:)]) {
+        [_delegate recorder:self willStopForItem:self.currentItem];
     }
     
-    [_writer finishRecordingWithCompletionHandler:^{
-        
-        [_filter removeTarget:_writer];
-        _camera.audioEncodingTarget = nil;
-        [_player pause];
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            
-            [self removeTimer];
-            
-        });
-        
-    }];
+    
+    self.currentItem.endTime = self.currentTime;
+    
+    self.currentItem.accompanyAudioEndTime = self.player.currentTime;
+    
+    [_player pause];
     
     _status = KCRecorderStatusStopped;
     [self statusDidChanged];
+    [self removeTimer];
+    
+    __weak typeof(self) weakSelf = self;
+    [_writer finishRecordingWithCompletionHandler:^{
+        
+        [weakSelf.filter removeTarget:weakSelf.writer];
+        weakSelf.camera.audioEncodingTarget = nil;
+        weakSelf.writer = nil;
+        
+        
+    }];
+    
+    if ([_delegate respondsToSelector:@selector(recorder:didStoppedForItem:)]) {
+        [_delegate recorder:weakSelf didStoppedForItem:self.currentItem];
+    }
+    
     
 }
 
@@ -626,16 +681,23 @@
 
 - (void)updateCurrentTime
 {
+    if (_status != KCRecorderStatusRecording) {
+        return;
+    }
+
     _currentTime += _timer.timeInterval / self.rate;
-    
+    _accompanyAudioCurrentTime = _player.currentTime;
     !_currentTimeDidChangedBlock ? : _currentTimeDidChangedBlock(self, _currentTime);
     
     if ([_delegate respondsToSelector:@selector(recorderCurrentTimeDidChanged:)]) {
         [_delegate recorderCurrentTimeDidChanged:self];
     }
     
+//    NSLog(@"%f---%f", _currentTime, self.duration);
     
     if (self.duration && _currentTime >= self.duration) {
+        
+//        NSLog(@"_currentTime == self.duration");
         
         [self stop];
     }
@@ -645,8 +707,17 @@
 {
     _currentTime = 0;
     for (KCRecorderItem *item in _items) {
-        _currentTime += item.duration;
+        _currentTime += (item.duration / item.rate);
     }
+    
+    NSTimeInterval accompanyCurrentTime = self.currentItem.accompanyAudioEndTime;
+    
+    if (!accompanyCurrentTime) {
+        accompanyCurrentTime = [self accompanyAudioStartTime];
+    }
+    
+    _accompanyAudioCurrentTime = accompanyCurrentTime;
+    
     !_currentTimeDidChangedBlock ? : _currentTimeDidChangedBlock(self, _currentTime);
     
     if ([_delegate respondsToSelector:@selector(recorderCurrentTimeDidChanged:)]) {
@@ -662,5 +733,49 @@
     }
     !_statusDidChangedBlock ? : _statusDidChangedBlock(self, _status);
 }
+
+#pragma mark -GPUImageVideoCameraDelegate
+- (void)willOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
+{
+    if ([_delegate respondsToSelector:@selector(recorder:willOutputSampleBuffer:)]) {
+        [_delegate recorder:self willOutputSampleBuffer:sampleBuffer];
+    }
+    
+    
+    /*
+    if (_status == KCRecorderStatusRecording) {
+        
+        
+        if (_reader) {
+            // 要确保nominalFrameRate>0，之前出现过android拍的0帧视频
+                if (_reader.status == AVAssetReaderStatusReading) {
+                    
+                    CMSampleBufferRef audioBuffer = [_readerOutput copyNextSampleBuffer];
+                    
+                    if (audioBuffer != NULL) {
+                        [_writer processAudioBuffer:audioBuffer];
+                        KSLog(@"写入samplebuffer");
+                    }else {
+                        KSLog(@"samplebuffer 为 nil");
+                    }
+                    
+                }
+            
+            
+            
+        }
+        
+    }*/
+    
+}
+
+
+- (void)didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
+{
+    if ([_delegate respondsToSelector:@selector(recorder:didOutputSampleBuffer:)]) {
+        [_delegate recorder:self didOutputSampleBuffer:sampleBuffer];
+    }
+}
+
 
 @end

@@ -12,10 +12,8 @@
 
 @property (nonatomic,strong) NSURL *URL;
 
-
 @property (nonatomic,assign) NSTimeInterval startTime;
 @property (nonatomic,assign) NSTimeInterval endTime;
-
 
 @property (nonatomic,assign, readonly) NSTimeInterval duration;
 
