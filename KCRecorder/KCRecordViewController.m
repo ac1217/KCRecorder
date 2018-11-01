@@ -58,12 +58,12 @@
     
     [self.view insertSubview:self.recorder.view atIndex:0];
     
-    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+//    dispatch_async(dispatch_get_global_queue(0, 0), ^{
     
-        [self.recorder prepare];
+        [self.recorder prepareWithCameraPosition:AVCaptureDevicePositionBack];
         [self.recorder beginPreview];
         
-    });
+//    });
 
     
 }

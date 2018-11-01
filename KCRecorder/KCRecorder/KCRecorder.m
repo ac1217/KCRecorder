@@ -347,7 +347,7 @@
 {
     GPUImageStillCamera *camera = [[GPUImageStillCamera alloc] initWithSessionPreset:_sessionPreset cameraPosition:cameraPosition];
     camera.delegate = self;
-    [camera.videoCaptureConnection setPreferredVideoStabilizationMode:AVCaptureVideoStabilizationModeCinematic];
+//    [camera.videoCaptureConnection setPreferredVideoStabilizationMode:AVCaptureVideoStabilizationModeCinematic];
     
 //    camera.captureSessionPreset = AVCaptureSessionPreset640x480;
     
